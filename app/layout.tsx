@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "CleanLabel — AI Food Scanner | Detect Hidden Toxins in Your Food",
+    default: "CleanLabel | AI Food Scanner | Detect Hidden Toxins in Your Food",
     template: "%s | CleanLabel",
   },
   description:
