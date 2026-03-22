@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Shield } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -11,9 +13,13 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <a href="#" className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-                <Shield className="w-4.5 h-4.5 text-white" />
-              </div>
+              <Image
+                src="/icon.png"
+                alt="CleanLabel"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg"
+              />
               <span className="text-lg font-bold text-white tracking-tight">
                 Clean<span className="text-emerald-400">Label</span>
               </span>
@@ -45,16 +51,22 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-5">Legal</h4>
             <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service"].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                >
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
 

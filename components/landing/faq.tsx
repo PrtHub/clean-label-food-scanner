@@ -4,7 +4,10 @@ import { FAQ_ITEMS } from "@/lib/landing-data";
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative bg-[#0A0A0A] py-32 scroll-mt-16 overflow-hidden">
+    <section
+      id="faq"
+      className="relative bg-[#0A0A0A] py-32 scroll-mt-16 overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full -translate-x-1/2" />
 
@@ -12,10 +15,13 @@ export function FAQ() {
         <AnimateIn className="text-center mb-20">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 bg-white/5 border border-white/10 backdrop-blur-sm">
             <MessageCircleQuestion className="w-4 h-4 text-emerald-400" />
-            <span className="text-gray-400 text-xs font-bold tracking-widest uppercase">Common Questions</span>
+            <span className="text-gray-400 text-xs font-bold tracking-widest uppercase">
+              Common Questions
+            </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-5 underline decoration-emerald-500/30 underline-offset-8">
-            Got Questions? <span className="text-gray-500">We have answers.</span>
+            Got Questions?{" "}
+            <span className="text-gray-500">We have answers.</span>
           </h2>
         </AnimateIn>
 
@@ -45,9 +51,11 @@ export function FAQ() {
         <AnimateIn delay={400} className="mt-20 text-center">
           <div className="inline-block p-1 rounded-2xl bg-linear-to-r from-emerald-500/20 via-white/5 to-emerald-500/20">
             <div className="bg-[#0F0F0F] rounded-xl px-8 py-6 border border-white/5">
-              <p className="text-gray-400 font-medium mb-4">Still have questions?</p>
-              <a 
-                href="mailto:support@cleanlabel.app" 
+              <p className="text-gray-400 font-medium mb-4">
+                Still have questions?
+              </p>
+              <a
+                href="mailto:pritamfinds@gmail.com"
                 className="text-white font-bold hover:text-emerald-400 transition-colors underline decoration-emerald-500/40 underline-offset-4"
               >
                 Contact our support team →

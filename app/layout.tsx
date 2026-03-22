@@ -81,6 +81,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://cleanlabelapp.sbs",
   },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+  },
 };
 
 export default function RootLayout({

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Shield, X, Menu, Apple } from "lucide-react";
+import Image from "next/image";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,18 +16,26 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-100 flex justify-center pt-4 sm:pt-6 pointer-events-none px-4">
-      <div className={`
+      <div
+        className={`
         relative max-w-7xl w-full mx-auto px-6 h-16 flex items-center justify-between pointer-events-auto
         rounded-3xl border transition-all duration-500
-        ${scrolled 
-          ? "bg-[#0A0A0A]/80 backdrop-blur-2xl border-white/10 shadow-2xl py-2" 
-          : "bg-transparent border-transparent py-4"}
-      `}>
+        ${
+          scrolled
+            ? "bg-[#0A0A0A]/80 backdrop-blur-2xl border-white/10 shadow-2xl py-2"
+            : "bg-transparent border-transparent py-4"
+        }
+      `}
+      >
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-9 h-9 rounded-xl bg-linear-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
-            <Shield className="w-5 h-5 text-white" />
-          </div>
+          <Image
+            src="/icon.png"
+            alt="CleanLabel"
+            width={32}
+            height={32}
+            className="w-8 h-8 rounded-lg"
+          />
           <span className="text-xl font-black text-white tracking-tighter">
             Clean<span className="text-emerald-400">Label</span>
           </span>
