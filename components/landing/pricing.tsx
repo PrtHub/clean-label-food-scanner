@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Check, Star, Zap, ShieldCheck, Heart, Infinity } from "lucide-react";
 import { AnimateIn } from "./animate-in";
@@ -13,7 +13,10 @@ const COMMON_FEATURES = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="relative bg-[#0A0A0A] py-32 scroll-mt-16 overflow-hidden">
+    <section
+      id="pricing"
+      className="relative bg-[#0A0A0A] py-32 scroll-mt-16 overflow-hidden"
+    >
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/5 blur-[160px] rounded-full" />
 
@@ -21,13 +24,19 @@ export function Pricing() {
         <AnimateIn className="text-center mb-20">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm">
             <Zap className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase">Pricing Plans</span>
+            <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase">
+              Pricing Plans
+            </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6">
-            Invest in Your <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-teal-300">Longevity.</span>
+            Invest in Your{" "}
+            <span className="text-transparent bg-clip-text bg-[#10B981] bg-size-[200%_100%] animate-gradient-x">
+              Longevity.
+            </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto font-medium">
-            Full laboratory-grade power for everyone. Pro users unlock unlimited exploration of every food aisle.
+            Full laboratory-grade power for everyone. Pro users unlock unlimited
+            exploration of every food aisle.
           </p>
         </AnimateIn>
 
@@ -38,19 +47,27 @@ export function Pricing() {
               <div className="mb-10">
                 <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
                   Essentials
-                  <span className="text-[10px] bg-white/5 px-2 py-0.5 rounded-full text-gray-400 uppercase tracking-widest border border-white/10">Free Plan</span>
+                  <span className="text-[10px] bg-white/5 px-2 py-0.5 rounded-full text-gray-400 uppercase tracking-widest border border-white/10">
+                    Free Plan
+                  </span>
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-4xl font-bold text-white tracking-tighter">5 Free Scans</span>
+                  <span className="text-4xl font-bold text-white tracking-tighter">
+                    5 Free Scans
+                  </span>
                 </div>
-                <p className="text-gray-500 text-xs font-medium uppercase tracking-widest">Included Monthly</p>
+                <p className="text-gray-500 text-xs font-medium uppercase tracking-widest">
+                  Included Monthly
+                </p>
               </div>
 
               <div className="space-y-4 mb-10 flex-1">
                 {COMMON_FEATURES.map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <Check className="w-4 h-4 text-gray-600 shrink-0" />
-                    <span className="text-gray-400 text-sm font-medium">{item}</span>
+                    <span className="text-gray-400 text-sm font-medium">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -75,17 +92,25 @@ export function Pricing() {
                   <Infinity className="w-4 h-4 text-emerald-400/50" />
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-5xl font-bold text-white tracking-tighter">$6.99</span>
-                  <span className="text-gray-500 text-sm font-medium">/month</span>
+                  <span className="text-5xl font-bold text-white tracking-tighter">
+                    $6.99
+                  </span>
+                  <span className="text-gray-500 text-sm font-medium">
+                    /month
+                  </span>
                 </div>
-                <p className="text-emerald-400/80 text-xs font-black uppercase tracking-widest">Unlimited Access</p>
+                <p className="text-emerald-400/80 text-xs font-black uppercase tracking-widest">
+                  Unlimited Access
+                </p>
               </div>
 
               <div className="space-y-4 mb-10 flex-1 relative z-10">
                 {COMMON_FEATURES.map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <Check className="w-4 h-4 text-emerald-500/50 shrink-0" />
-                    <span className="text-gray-200 text-sm font-bold">{item}</span>
+                    <span className="text-gray-200 text-sm font-bold">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -117,8 +142,12 @@ export function Pricing() {
                   <Star className="w-4 h-4 text-emerald-400 fill-current" />
                 </div>
                 <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-6xl font-black text-white tracking-tighter">$19.99</span>
-                  <span className="text-emerald-400/60 text-sm font-medium">/year</span>
+                  <span className="text-6xl font-black text-white tracking-tighter">
+                    $19.99
+                  </span>
+                  <span className="text-emerald-400/60 text-sm font-medium">
+                    /year
+                  </span>
                 </div>
                 <p className="text-emerald-400 text-sm font-black tracking-tight flex items-center gap-2">
                   Only $1.66 per month
@@ -129,12 +158,16 @@ export function Pricing() {
                 {COMMON_FEATURES.map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="text-white text-sm font-black">{item}</span>
+                    <span className="text-white text-sm font-black">
+                      {item}
+                    </span>
                   </div>
                 ))}
                 <div className="flex items-center gap-3 pt-4">
                   <Heart className="w-5 h-5 text-red-500 fill-current animate-pulse shrink-0" />
-                  <span className="text-emerald-400 text-xs font-black uppercase tracking-widest">Unlimited Protection</span>
+                  <span className="text-emerald-400 text-xs font-black uppercase tracking-widest">
+                    Unlimited Protection
+                  </span>
                 </div>
               </div>
 

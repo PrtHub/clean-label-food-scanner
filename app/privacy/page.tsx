@@ -4,9 +4,12 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — CleanLabel",
+  title: "Privacy Policy",
   description:
-    "Learn how CleanLabel protects your privacy. Your data stays on your device.",
+    "Learn how CleanLabel protects your privacy. All scan history and dietary preferences stay on your device. No account required, no tracking.",
+  alternates: {
+    canonical: "https://cleanlabelapp.sbs/privacy",
+  },
 };
 
 export default function PrivacyPage() {

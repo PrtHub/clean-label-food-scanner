@@ -1,4 +1,10 @@
-import { ShieldCheck, ArrowRight, Star, ChevronRight, Apple } from "lucide-react";
+import {
+  ShieldCheck,
+  ArrowRight,
+  Star,
+  ChevronRight,
+  Apple,
+} from "lucide-react";
 import { AnimateIn } from "./animate-in";
 import Image from "next/image";
 
@@ -36,7 +42,7 @@ export function Hero() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-white tracking-tight leading-[0.95] mb-8">
                 Know What&apos;s
                 <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-teal-300 to-emerald-400 bg-size-[200%_100%] animate-gradient-x">
+                <span className="text-transparent bg-clip-text bg-[#10B981] bg-size-[200%_100%] animate-gradient-x">
                   Really Inside.
                 </span>
               </h1>
@@ -44,7 +50,9 @@ export function Hero() {
 
             <AnimateIn delay={200}>
               <p className="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium">
-                Point your camera at any label. CleanLabel instantly detects hidden toxins, seed oils, and artificial dyes—even when they are hidden under deceptive names.
+                Point your camera at any label. CleanLabel instantly detects
+                hidden toxins, seed oils, and artificial dyes—even when they are
+                hidden under deceptive names.
               </p>
             </AnimateIn>
 
@@ -62,7 +70,9 @@ export function Hero() {
                   >
                     <Apple className="w-5 h-5 fill-current" />
                     <div className="flex flex-col items-start leading-none">
-                      <span className="text-[10px] uppercase tracking-wider opacity-60">Download on the</span>
+                      <span className="text-[10px] uppercase tracking-wider opacity-60">
+                        Download on the
+                      </span>
                       <span className="text-lg">App Store</span>
                     </div>
                   </a>
@@ -80,7 +90,7 @@ export function Hero() {
               </div>
             </AnimateIn>
 
-            <AnimateIn delay={400}>
+            {/* <AnimateIn delay={400}>
               <div className="flex items-center gap-6 justify-center lg:justify-start">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
@@ -104,15 +114,16 @@ export function Hero() {
                   <span className="text-xs text-gray-500 font-medium tracking-wide">Join thousands of health-conscious shoppers</span>
                 </div>
               </div>
-            </AnimateIn>
+            </AnimateIn> */}
           </div>
-
 
           {/* ── Right Content: Dynamic App Visuals ── */}
           <div className="relative group perspective-1000">
-            <AnimateIn delay={200} className="relative flex justify-center lg:justify-end">
+            <AnimateIn
+              delay={200}
+              className="relative flex justify-center lg:justify-end"
+            >
               <div className="relative w-full max-w-[640px] aspect-4/5 sm:aspect-auto sm:h-[720px]">
-
                 {/* Secondary Phone (Analysis Result) */}
                 <div className="absolute left-[5%] top-[10%] w-[55%] sm:w-[280px] z-10 transition-all duration-700 hover:z-30 hover:scale-105 group-hover:-translate-x-4">
                   <div className="relative rounded-[2.5rem] sm:rounded-[3.2rem] p-2 bg-linear-to-b from-gray-200/20 to-transparent border border-white/10 backdrop-blur-2xl shadow-2xl">
@@ -155,13 +166,16 @@ export function Hero() {
                         <ChevronRight className="w-5 h-5 text-emerald-400 rotate-90" />
                       </div>
                       <div>
-                        <div className="text-[10px] text-emerald-400 font-bold tracking-widest uppercase mb-0.5">Scanning</div>
-                        <div className="text-xs text-white font-semibold">Ingredient Analysis...</div>
+                        <div className="text-[10px] text-emerald-400 font-bold tracking-widest uppercase mb-0.5">
+                          Scanning
+                        </div>
+                        <div className="text-xs text-white font-semibold">
+                          Ingredient Analysis...
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </AnimateIn>
           </div>

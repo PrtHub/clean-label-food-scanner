@@ -12,17 +12,49 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        name: "CleanLabel",
+        url: "https://cleanlabelapp.sbs",
+        description:
+          "AI-powered food scanner that detects hidden toxins in ingredient labels.",
+        publisher: { "@type": "Organization", name: "CleanLabel" },
+      },
+      {
         "@type": "MobileApplication",
         name: "CleanLabel",
         operatingSystem: "iOS",
         applicationCategory: "HealthApplication",
         description:
           "AI-powered food scanner that detects hidden toxins, seed oils, artificial dyes, and dietary violations in ingredient labels.",
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
+        url: "https://cleanlabelapp.sbs",
+        image: "https://cleanlabelapp.sbs/icon.png",
+        screenshot: [
+          "https://cleanlabelapp.sbs/ss/01.png",
+          "https://cleanlabelapp.sbs/ss/02.png",
+          "https://cleanlabelapp.sbs/ss/03.png",
+          "https://cleanlabelapp.sbs/ss/04.png",
+        ],
+        author: {
+          "@type": "Organization",
+          name: "CleanLabel",
+          url: "https://cleanlabelapp.sbs",
         },
+        offers: [
+          {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            description: "Free tier — 5 AI scans per month",
+          },
+          {
+            "@type": "Offer",
+            price: "19.99",
+            priceCurrency: "USD",
+            description: "Pro — Unlimited scans, billed annually",
+          },
+        ],
+        featureList:
+          "AI ingredient scanning, toxin detection, seed oil detection, artificial dye detection, 15+ dietary profiles, encrypted local history, no barcode required",
       },
       {
         "@type": "FAQPage",

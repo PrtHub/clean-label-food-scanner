@@ -4,8 +4,12 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — CleanLabel",
-  description: "Terms of Service for the CleanLabel AI food scanner app.",
+  title: "Terms of Service",
+  description:
+    "Terms of Service for CleanLabel, the AI-powered food scanner app for iOS. Free tier, premium plans, and usage guidelines.",
+  alternates: {
+    canonical: "https://cleanlabelapp.sbs/terms",
+  },
 };
 
 export default function TermsPage() {

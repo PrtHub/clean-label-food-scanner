@@ -52,6 +52,12 @@ export function Navbar() {
               {item}
             </a>
           ))}
+          <a
+            href="/blog"
+            className="text-xs font-black uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300"
+          >
+            Blog
+          </a>
         </div>
 
         {/* Desktop CTA */}
@@ -90,6 +96,13 @@ export function Navbar() {
                 {item}
               </a>
             ))}
+            <a
+              href="/blog"
+              onClick={() => setOpen(false)}
+              className="block text-lg font-bold text-gray-300 hover:text-white transition-colors"
+            >
+              Blog
+            </a>
             <a
               href="#download"
               onClick={() => setOpen(false)}

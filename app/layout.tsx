@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,7 +20,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "CleanLabel — AI Food Scanner | Detect Hidden Toxins in Your Food",
+  title: {
+    default: "CleanLabel — AI Food Scanner | Detect Hidden Toxins in Your Food",
+    template: "%s | CleanLabel",
+  },
   description:
     "Point your camera at any ingredient label and instantly detect hidden toxins, seed oils, artificial dyes, and dietary violations. AI-powered food scanner for iOS. Download free.",
   keywords: [
@@ -38,7 +42,11 @@ export const metadata: Metadata = {
     "artificial dye detector",
     "clean label",
     "food transparency",
+    "healthy food app",
+    "ingredient label reader",
+    "food toxin scanner",
   ],
+  applicationName: "CleanLabel",
   authors: [{ name: "CleanLabel" }],
   creator: "CleanLabel",
   publisher: "CleanLabel",
@@ -51,21 +59,12 @@ export const metadata: Metadata = {
     siteName: "CleanLabel",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "CleanLabel - AI Food Scanner that detects hidden toxins in your food",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CleanLabel — AI Food Scanner",
     description:
       "Detect hidden toxins in your food with AI-powered ingredient label scanning. Free for iOS.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -84,7 +83,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
+    apple: "/icon.png",
   },
+  manifest: "/manifest.json",
+  category: "health",
 };
 
 export default function RootLayout({
@@ -98,6 +100,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-VECGDQ83N7"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VECGDQ83N7');
+        `}
+      </Script>
     </html>
   );
 }

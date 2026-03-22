@@ -3,7 +3,10 @@ import { AnimateIn } from "./animate-in";
 
 export function FinalCTA() {
   return (
-    <section id="download" className="relative bg-[#0A0A0A] py-40 overflow-hidden scroll-mt-16">
+    <section
+      id="download"
+      className="relative bg-[#0A0A0A] py-40 overflow-hidden scroll-mt-16"
+    >
       {/* Dynamic Grid Overlay */}
       <div className="absolute inset-0 bg-[linear-to-r(rgba(255,255,255,0.02)_1px,transparent_1px),linear-to-b(rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,black_20%,transparent_100%)]" />
 
@@ -20,14 +23,19 @@ export function FinalCTA() {
 
         <AnimateIn delay={100}>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tighter leading-none">
-            Ready to <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-teal-300 to-emerald-400 bg-size-[200%_100%] animate-gradient-x">Transform</span> <br />
+            Ready to{" "}
+            <span className="text-transparent bg-clip-text bg-[#10B981] bg-size-[200%_100%] animate-gradient-x">
+              Transform
+            </span>{" "}
+            <br />
             Your Health?
           </h2>
         </AnimateIn>
 
         <AnimateIn delay={200}>
           <p className="text-gray-400 text-lg sm:text-2xl mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
-            Join thousands of health-conscious shoppers who have taken back control of their nutrition. Scan your first label in seconds.
+            Join thousands of health-conscious shoppers who have taken back
+            control of their nutrition. Scan your first label in seconds.
           </p>
         </AnimateIn>
 
@@ -44,7 +52,9 @@ export function FinalCTA() {
             >
               <Apple className="w-7 h-7 fill-current" />
               <div className="flex flex-col items-start leading-none">
-                <span className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mb-0.5">Download on the</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mb-0.5">
+                  Download on the
+                </span>
                 <span className="text-xl">App Store</span>
               </div>
               <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -53,7 +63,9 @@ export function FinalCTA() {
 
           <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 px-5 py-2 rounded-full backdrop-blur-md">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-xs font-black tracking-widest uppercase">Instant Pro Access</span>
+            <span className="text-emerald-400 text-xs font-black tracking-widest uppercase">
+              Instant Pro Access
+            </span>
           </div>
         </AnimateIn>
 

@@ -1,0 +1,17 @@
+{
+  "name": "CleanLabel — AI Food Scanner",
+  "short_name": "CleanLabel",
+  "description": "AI-powered food scanner that detects hidden toxins, seed oils, artificial dyes, and dietary violations in ingredient labels.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
