@@ -92,6 +92,14 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/support"
+                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                >
+                  Support
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
