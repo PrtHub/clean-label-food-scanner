@@ -58,25 +58,20 @@ export function Hero() {
 
             <AnimateIn delay={300}>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-5 mb-10">
-                <div className="relative group/btn">
-                  <div className="absolute -top-3 -right-2 bg-emerald-500 text-[#0A0A0A] text-[10px] font-black px-3 py-1 rounded-full tracking-widest uppercase shadow-2xl z-20 pointer-events-none">
-                    Coming Soon
+                <a
+                  href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group inline-flex items-center gap-3 bg-white text-black font-bold px-8 py-4.5 rounded-2xl overflow-hidden active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:bg-emerald-400"
+                >
+                  <Apple className="w-5 h-5 fill-current" />
+                  <div className="flex flex-col items-start leading-none">
+                    <span className="text-[10px] uppercase tracking-wider opacity-60">
+                      Download on the
+                    </span>
+                    <span className="text-lg">App Store</span>
                   </div>
-                  <a
-                    href="https://apps.apple.com/app/cleanlabel"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative inline-flex items-center gap-3 bg-white text-black font-bold px-8 py-4.5 rounded-2xl overflow-hidden active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
-                  >
-                    <Apple className="w-5 h-5 fill-current" />
-                    <div className="flex flex-col items-start leading-none">
-                      <span className="text-[10px] uppercase tracking-wider opacity-60">
-                        Download on the
-                      </span>
-                      <span className="text-lg">App Store</span>
-                    </div>
-                  </a>
-                </div>
+                </a>
 
                 <a
                   href="#features"

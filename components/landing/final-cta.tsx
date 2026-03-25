@@ -40,26 +40,21 @@ export function FinalCTA() {
         </AnimateIn>
 
         <AnimateIn delay={300} className="flex flex-col items-center gap-8">
-          <div className="relative group/btn">
-            <div className="absolute -top-3 -right-2 bg-emerald-500 text-[#0A0A0A] text-[10px] font-black px-4 py-1.5 rounded-full tracking-[0.2em] uppercase shadow-2xl z-20 pointer-events-none">
-              Coming Soon
+          <a
+            href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-4 bg-white text-black font-black px-10 py-5 rounded-[2rem] overflow-hidden active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]"
+          >
+            <Apple className="w-7 h-7 fill-current" />
+            <div className="flex flex-col items-start leading-none">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mb-0.5">
+                Download on the
+              </span>
+              <span className="text-xl">App Store</span>
             </div>
-            <a
-              href="https://apps.apple.com/app/cleanlabel"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-4 bg-white text-black font-black px-10 py-5 rounded-[2rem] overflow-hidden active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]"
-            >
-              <Apple className="w-7 h-7 fill-current" />
-              <div className="flex flex-col items-start leading-none">
-                <span className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mb-0.5">
-                  Download on the
-                </span>
-                <span className="text-xl">App Store</span>
-              </div>
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            </a>
-          </div>
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          </a>
 
           <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 px-5 py-2 rounded-full backdrop-blur-md">
             <Sparkles className="w-4 h-4 text-emerald-400" />

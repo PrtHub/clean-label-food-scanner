@@ -61,18 +61,15 @@ export function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex relative group/btn">
-          <div className="absolute -top-3 -right-2 bg-emerald-500 text-[#0A0A0A] text-[8px] font-black px-2 py-0.5 rounded-full tracking-widest uppercase shadow-xl z-20 pointer-events-none">
-            Coming Soon
-          </div>
-          <a
-            href="#download"
-            className="inline-flex items-center gap-2.5 bg-white text-black text-xs font-black uppercase tracking-widest px-6 py-2.5 rounded-2xl group-hover:bg-emerald-400 group-hover:text-black transition-all shadow-xl shadow-white/5 active:scale-95"
-          >
-            <Apple className="w-4 h-4 fill-current" />
-            <span>Download</span>
-          </a>
-        </div>
+        <a
+          href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex items-center gap-2.5 bg-white text-black text-xs font-black uppercase tracking-widest px-6 py-2.5 rounded-2xl hover:bg-emerald-400 Transition-all shadow-xl shadow-white/5 group active:scale-95"
+        >
+          <Apple className="w-4 h-4 fill-current" />
+          <span>Download</span>
+        </a>
 
         {/* Mobile toggle */}
         <button
@@ -104,7 +101,9 @@ export function Navbar() {
               Blog
             </a>
             <a
-              href="#download"
+              href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-3 bg-white text-black font-black py-4 rounded-2xl uppercase tracking-widest text-sm"
             >

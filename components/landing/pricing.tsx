@@ -73,7 +73,7 @@ export function Pricing() {
               </div>
 
               <a
-                href="https://apps.apple.com/app/cleanlabel"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm font-bold hover:bg-white/10 transition-all"
@@ -116,7 +116,7 @@ export function Pricing() {
               </div>
 
               <a
-                href="https://apps.apple.com/app/cleanlabel"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center py-4 rounded-2xl bg-white/10 border border-white/10 text-white text-sm font-bold hover:bg-white/20 transition-all active:scale-[0.98]"
@@ -172,7 +172,7 @@ export function Pricing() {
               </div>
 
               <a
-                href="https://apps.apple.com/app/cleanlabel"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative w-full text-center py-4.5 rounded-2xl bg-emerald-500 text-[#0A0A0A] font-black text-xs uppercase tracking-widest overflow-hidden group/btn shadow-[0_0_40px_rgba(16,185,129,0.4)] hover:shadow-[0_0_60px_rgba(16,185,129,0.5)] transition-all active:scale-95"
