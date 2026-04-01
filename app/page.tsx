@@ -44,11 +44,11 @@ export default function Home() {
             "@type": "Offer",
             price: "0",
             priceCurrency: "USD",
-            description: "Free tier — 5 AI scans per month",
+            description: "Free tier — 1 AI scan per day",
           },
           {
             "@type": "Offer",
-            price: "19.99",
+            price: "29.99",
             priceCurrency: "USD",
             description: "Pro — Unlimited scans, billed annually",
           },

@@ -22,7 +22,7 @@ CleanLabel ("we", "us", "our") is committed to protecting your privacy. This Pri
 
 - **Scan Images**: When you scan a label, the image is temporarily sent to our AI processing gateway (OpenRouter accessing Google Gemini AI) for analysis and is **not stored** on our servers after the response is returned.
 - **Scan History**: Past scan results (product name, ingredients, status) are stored **locally on your device** using SQLite. We do not have access to your scan history.
-- **App Notifications**: If enabled, we use local and push notifications to alert you of monthly scan resets.
+- **App Notifications**: If enabled, we use local and push notifications to alert you of daily scan resets.
 - **App Usage**: Basic, anonymized usage data may be collected via Apple's built-in analytics to help us improve the App.
 
 ### 2.3 Subscription Information

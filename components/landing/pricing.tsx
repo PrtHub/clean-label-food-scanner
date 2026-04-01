@@ -53,11 +53,11 @@ export function Pricing() {
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-4xl font-bold text-white tracking-tighter">
-                    5 Free Scans
+                    1 Free Scan
                   </span>
                 </div>
                 <p className="text-gray-500 text-xs font-medium uppercase tracking-widest">
-                  Included Monthly
+                  Every Day
                 </p>
               </div>
 
@@ -88,15 +88,15 @@ export function Pricing() {
             <div className="group relative h-full rounded-[2.5rem] bg-[#0F0F0F] border border-white/5 p-8 sm:p-10 flex flex-col hover:border-white/10 transition-all duration-500">
               <div className="mb-10 relative z-10">
                 <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                  Monthly Pro
+                  Weekly Pro
                   <Infinity className="w-4 h-4 text-emerald-400/50" />
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-5xl font-bold text-white tracking-tighter">
-                    $6.99
+                    $4.99
                   </span>
                   <span className="text-gray-500 text-sm font-medium">
-                    /month
+                    /week
                   </span>
                 </div>
                 <p className="text-emerald-400/80 text-xs font-black uppercase tracking-widest">
@@ -121,7 +121,7 @@ export function Pricing() {
                 rel="noopener noreferrer"
                 className="w-full text-center py-4 rounded-2xl bg-white/10 border border-white/10 text-white text-sm font-bold hover:bg-white/20 transition-all active:scale-[0.98]"
               >
-                Select Monthly
+                Select Weekly
               </a>
             </div>
           </AnimateIn>
@@ -132,7 +132,7 @@ export function Pricing() {
               {/* Popular Badge */}
               <div className="absolute top-6 right-6 focus:ring-emerald-500">
                 <div className="bg-emerald-500 text-[#0A0A0A] text-[10px] font-black px-4 py-1 rounded-full tracking-widest uppercase shadow-xl animate-pulse">
-                  Save 75%
+                  Best Value
                 </div>
               </div>
 
@@ -143,14 +143,14 @@ export function Pricing() {
                 </div>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-6xl font-black text-white tracking-tighter">
-                    $19.99
+                    $29.99
                   </span>
                   <span className="text-emerald-400/60 text-sm font-medium">
                     /year
                   </span>
                 </div>
                 <p className="text-emerald-400 text-sm font-black tracking-tight flex items-center gap-2">
-                  Only $1.66 per month
+                  Only $2.50 per month
                 </p>
               </div>
 

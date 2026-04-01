@@ -21,13 +21,13 @@ CleanLabel is an AI-powered ingredient analysis tool that helps users understand
 
 ### Free Tier
 
-- Users receive 5 free AI label scans per month.
-- Free scans reset on the 1st of each calendar month.
+- Users receive 1 free AI label scan per day.
+- Free scan resets daily at midnight.
 
 ### Premium Subscription
 
-- **Annual Plan**: $19.99/year, billed annually.
-- **Monthly Plan**: $6.99/month, billed monthly.
+- **Annual Plan**: $29.99/year, billed annually.
+- **Weekly Plan**: $4.99/week, billed weekly.
 - Payment is charged to your Apple ID account at confirmation of purchase.
 - Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.
 - You can manage and cancel your subscription at any time in your App Store account settings.

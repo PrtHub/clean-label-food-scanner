@@ -92,7 +92,7 @@ export default function PrivacyPage() {
               <li>
                 <strong className="text-white">App Notifications:</strong> If
                 enabled, we use local and push notifications to alert you of
-                monthly scan resets.
+                daily scan resets.
               </li>
               <li>
                 <strong className="text-white">App Usage:</strong> Basic,

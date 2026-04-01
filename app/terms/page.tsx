@@ -19,7 +19,13 @@ export default function TermsPage() {
       <header className="border-b border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-6 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <Image src="/icon.png" alt="CleanLabel" width={32} height={32} className="w-8 h-8 rounded-lg" />
+            <Image
+              src="/icon.png"
+              alt="CleanLabel"
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="text-lg font-bold text-white tracking-tight">
               Clean<span className="text-emerald-400">Label</span>
             </span>
@@ -77,8 +83,8 @@ export default function TermsPage() {
                   Free Tier
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
-                  <li>5 free AI label scans per month</li>
-                  <li>Free scans reset on the 1st of each calendar month</li>
+                  <li>1 free AI label scan per day</li>
+                  <li>Free scan resets daily at midnight</li>
                 </ul>
               </div>
               <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] p-5">
@@ -87,7 +93,10 @@ export default function TermsPage() {
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
                   <li>
-                    <strong className="text-white">Annual:</strong> $19.99/year
+                    <strong className="text-white">Annual:</strong> $29.99/year
+                  </li>
+                  <li>
+                    <strong className="text-white">Weekly:</strong> $4.99/week
                   </li>
                   <li>
                     <strong className="text-white">Monthly:</strong> $6.99/month
