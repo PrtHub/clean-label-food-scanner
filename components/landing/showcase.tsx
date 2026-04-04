@@ -89,22 +89,20 @@ export function Showcase() {
             </AnimateIn>
           </div>
 
-          <div className="lg:col-span-7 order-1 lg:order-2 flex justify-center lg:justify-end perspective-1000">
-            <AnimateIn
-              delay={200}
-              className="relative group p-4 sm:p-8 bg-linear-to-b from-white/5 to-transparent rounded-[3rem] border border-white/10 backdrop-blur-3xl shadow-2xl transition-all duration-700 hover:scale-[1.02]"
-            >
-              <div className="relative aspect-9/19.5 w-[280px] sm:w-[340px] rounded-[2.5rem] overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.5)]">
-                <Image
-                  src="/ss/01.png"
-                  alt="Scanning View"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1/2 bg-linear-to-b from-transparent via-emerald-500/20 to-transparent animate-scan-line pointer-events-none" />
-              </div>
-              {/* Floating micro-copy */}
-              <div className="absolute -right-8 bottom-1/4 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-2xl animate-aurora-2">
+          <div className="lg:col-span-7 order-1 lg:order-2 flex justify-center lg:justify-end">
+            <AnimateIn delay={200} className="relative group">
+              {/* Glow */}
+              <div className="absolute inset-x-6 inset-y-8 bg-emerald-500/20 blur-[60px] rounded-full pointer-events-none" />
+              <Image
+                src="/ss/01.png"
+                alt="CleanLabel AI scanner"
+                width={300}
+                height={648}
+                className="relative w-60 sm:w-75 h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+              {/* Floating badge */}
+              <div className="absolute -right-4 sm:-right-10 bottom-[28%] flex items-center gap-2 bg-emerald-500 text-white text-[10px] font-black px-3 py-1.5 rounded-full shadow-[0_4px_20px_rgba(16,185,129,0.5)] whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 Scanning Active...
               </div>
             </AnimateIn>
@@ -114,31 +112,24 @@ export function Showcase() {
         {/* ── Feature 2: Deep Analysis ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center mb-40">
           <div className="lg:col-span-7 flex justify-center lg:justify-start">
-            <AnimateIn
-              delay={100}
-              className="relative group p-4 sm:p-8 bg-linear-to-b from-red-500/10 to-transparent rounded-[3rem] border border-red-500/20 backdrop-blur-3xl shadow-2xl transition-all duration-700 hover:scale-[1.02]"
-            >
-              <div className="relative aspect-9/19.5 w-[280px] sm:w-[340px] rounded-[2.5rem] overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.5)]">
-                <Image
-                  src="/ss/02.png"
-                  alt="Results View"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute -left-12 top-1/3 p-4 bg-[#0A0A0A]/90 border border-red-500/30 backdrop-blur-xl rounded-2xl shadow-2xl hidden sm:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
-                    <Flame className="w-5 h-5 text-red-500" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-red-500 font-bold uppercase tracking-widest whitespace-nowrap">
-                      Warning
-                    </div>
-                    <div className="text-xs text-white font-semibold">
-                      Dangerous Additives Found
-                    </div>
-                  </div>
+            <AnimateIn delay={100} className="relative group">
+              {/* Glow */}
+              <div className="absolute inset-x-6 inset-y-8 bg-red-500/15 blur-[60px] rounded-full pointer-events-none" />
+              <Image
+                src="/ss/02.png"
+                alt="CleanLabel toxin detection results"
+                width={300}
+                height={648}
+                className="relative w-60 sm:w-75 h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+              {/* Floating badge */}
+              <div className="absolute -right-4 sm:-right-10 top-[28%] hidden sm:flex items-center gap-2.5 bg-[#0A0A0A]/95 border border-red-500/25 backdrop-blur-xl px-3.5 py-2.5 rounded-2xl shadow-2xl">
+                <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                  <Flame className="w-4 h-4 text-red-400" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-red-400 font-black tracking-widest uppercase">Warning</div>
+                  <div className="text-xs text-white font-semibold whitespace-nowrap">Dangerous Additives Found</div>
                 </div>
               </div>
             </AnimateIn>
@@ -201,12 +192,14 @@ export function Showcase() {
                   ))}
                 </div>
               </div>
-              <div className="relative w-full sm:w-[220px] aspect-9/19.5 rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
+              <div className="relative shrink-0">
+                <div className="absolute inset-x-4 inset-y-6 bg-indigo-500/20 blur-2xl rounded-full pointer-events-none" />
                 <Image
                   src="/ss/03.png"
                   alt="Profiles"
-                  fill
-                  className="object-cover"
+                  width={200}
+                  height={432}
+                  className="relative w-36 sm:w-48 h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 group-hover:rotate-2"
                 />
               </div>
             </div>
@@ -237,12 +230,14 @@ export function Showcase() {
                   </span>
                 </div>
               </div>
-              <div className="relative w-full sm:w-[220px] aspect-9/19.5 rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
+              <div className="relative shrink-0">
+                <div className="absolute inset-x-4 inset-y-6 bg-cyan-500/20 blur-2xl rounded-full pointer-events-none" />
                 <Image
                   src="/ss/04.png"
                   alt="History"
-                  fill
-                  className="object-cover"
+                  width={200}
+                  height={432}
+                  className="relative w-36 sm:w-48 h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 group-hover:-rotate-2"
                 />
               </div>
             </div>

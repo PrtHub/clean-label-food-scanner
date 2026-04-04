@@ -5,11 +5,34 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — Food Safety, Toxins & Ingredient Science",
   description:
     "Expert articles on food safety, hidden toxins, seed oils, artificial additives, and how to read ingredient labels. Stay informed with CleanLabel.",
   alternates: {
     canonical: "https://cleanlabelapp.sbs/blog",
+  },
+  openGraph: {
+    title: "CleanLabel Blog — Food Safety, Toxins & Ingredient Science",
+    description:
+      "Expert articles on hidden toxins, seed oils, artificial additives, and how to read ingredient labels.",
+    url: "https://cleanlabelapp.sbs/blog",
+    siteName: "CleanLabel",
+    type: "website",
+    images: [
+      {
+        url: "https://cleanlabelapp.sbs/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CleanLabel Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CleanLabel Blog — Food Safety & Ingredient Science",
+    description:
+      "Expert articles on hidden toxins, seed oils, and artificial additives.",
+    images: ["https://cleanlabelapp.sbs/og-image.png"],
   },
 };
 
