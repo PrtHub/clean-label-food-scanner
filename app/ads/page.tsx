@@ -567,7 +567,7 @@ function FeedFreeValue() {
             <br />
             In Your Food.
             <br />
-            <span style={{ color: "#34d399" }}>Every Day.</span>
+            <span style={{ color: "#34d399" }}>Every Week.</span>
           </h2>
 
           <p
@@ -578,7 +578,7 @@ function FeedFreeValue() {
               maxWidth: 680,
             }}
           >
-            1 free AI ingredient scan per day. No subscription. No account. Just
+            3 free AI ingredient scans per week. No subscription. No account. Just
             point your phone at any label and get the truth.
           </p>
         </div>
@@ -586,7 +586,7 @@ function FeedFreeValue() {
         {/* Feature grid */}
         <div className="grid grid-cols-3 gap-6 w-full">
           {[
-            { val: "1 scan", label: "Free every day" },
+            { val: "3 scans", label: "Free every week" },
             { val: "3 sec", label: "To get results" },
             { val: "0 data", label: "Stored on servers" },
           ].map(({ val, label }) => (

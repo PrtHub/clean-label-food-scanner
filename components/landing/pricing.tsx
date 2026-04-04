@@ -53,11 +53,11 @@ export function Pricing() {
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-4xl font-bold text-white tracking-tighter">
-                    1 Free Scan
+                    3 Free Scans
                   </span>
                 </div>
                 <p className="text-gray-500 text-xs font-medium uppercase tracking-widest">
-                  Every Day
+                  Every Week
                 </p>
               </div>
 

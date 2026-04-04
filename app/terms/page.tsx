@@ -84,7 +84,7 @@ export default function TermsPage() {
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
                   <li>3 free AI scans per week</li>
-                  <li>Free scan resets daily at midnight</li>
+                  <li>Free scans reset every Monday</li>
                 </ul>
               </div>
               <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] p-5">
