@@ -1,208 +1,151 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import {
-  ShieldAlert,
-  ShieldCheck,
-  Star,
-  Scan,
-  Eye,
-  Lock,
-  Zap,
-  ChevronLeft,
-  ChevronRight,
-  Check,
-  X,
-  AlertTriangle,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, X, Zap } from "lucide-react";
 
-/* ─────────────────────────────────────────────
-   Ad Creative Components
-   Each is a fixed-dimension div ready to screenshot.
-   ───────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────
+   DESIGN PRINCIPLE:
+   Every ad answers ONE question instantly:
+   "What does this app do for ME?"
+   No clutter. No generic stock vibes. Pure value.
+───────────────────────────────────────────────────────────── */
 
-// ── FEED AD 1: Shock Discovery (1080x1080) ──
-function FeedShock() {
+// ── FEED 1: The Decode (1080×1080)
+// Hook: ingredient names people see but don't understand
+function FeedDecode() {
+  const decoded = [
+    { raw: "Yeast Extract", real: "Hidden MSG" },
+    { raw: "Vegetable Oil", real: "Seed Oil" },
+    { raw: "Natural Flavors", real: "Unknown Chemical" },
+    { raw: "Maltodextrin", real: "Sugar Spike" },
+    { raw: "Soluble Corn Fiber", real: "Gut Irritant" },
+  ];
+
   return (
     <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
+      className="relative overflow-hidden font-sans"
+      style={{ width: 1080, height: 1080, fontFamily: "system-ui, sans-serif" }}
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-emerald-500/5 blur-[100px] rounded-full" />
+      <div className="absolute inset-0 bg-[#080808]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/3 blur-[100px] rounded-full" />
 
-      {/* Content */}
-      <div className="relative flex flex-col items-center justify-between h-full p-16">
-        {/* Top badge */}
-        <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/25 rounded-full px-6 py-3">
-          <AlertTriangle className="w-5 h-5 text-red-400" />
-          <span className="text-red-400 text-lg font-bold tracking-wide uppercase">
-            Ingredient Alert
-          </span>
-        </div>
-
-        {/* Center - Product verdict */}
-        <div className="flex flex-col items-center text-center -mt-4">
-          <div className="w-[200px] h-[200px] rounded-[3rem] bg-red-500/10 border-2 border-red-500/30 flex items-center justify-center mb-10 shadow-[0_0_80px_rgba(239,68,68,0.15)]">
-            <ShieldAlert className="w-24 h-24 text-red-500" />
-          </div>
-
-          <h2 className="text-[72px] leading-[1] font-black text-white tracking-tight mb-6">
-            Your &ldquo;Healthy&rdquo;
-            <br />
-            <span className="text-red-500">Snack Is Lying</span>
-          </h2>
-
-          <p className="text-[28px] text-gray-400 max-w-[700px] leading-snug">
-            We scanned 50 &ldquo;organic&rdquo; products.
-            <br />
-            <span className="text-red-400 font-bold">
-              42 contained hidden toxins.
-            </span>
-          </p>
-        </div>
-
-        {/* Toxic ingredients preview */}
-        <div className="flex flex-col items-center gap-5 w-full">
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "Maltodextrin",
-              "Canola Oil",
-              "Red 40",
-              "MSG",
-              "Yellow 6",
-              "Corn Syrup",
-            ].map((ing) => (
-              <span
-                key={ing}
-                className="text-red-400 text-[18px] font-semibold border border-red-500/30 rounded-full px-5 py-2 bg-red-500/5"
-              >
-                {ing}
-              </span>
-            ))}
-          </div>
-
-          {/* App branding */}
-          <div className="flex items-center gap-4 mt-2">
-            <Image
-              src="/icon.png"
-              alt="CleanLabel"
-              width={48}
-              height={48}
-              className="rounded-xl"
-            />
-            <span className="text-white text-[28px] font-black tracking-tight">
-              Clean<span className="text-emerald-400">Label</span>
-            </span>
-            <span className="text-gray-600 text-[20px]">|</span>
-            <span className="text-gray-400 text-[20px] font-medium">
-              Free on the App Store
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── FEED AD 2: Feature Showcase (1080x1080) ──
-function FeedFeature() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-[20%] right-0 w-[500px] h-[500px] bg-emerald-500/8 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-500/5 blur-[100px] rounded-full" />
-
-      <div className="relative flex h-full">
-        {/* Left side - Text */}
-        <div className="flex-1 flex flex-col justify-between p-16 pr-8">
-          {/* Top */}
+      <div className="relative h-full flex flex-col p-[72px]">
+        {/* Top label */}
+        <div className="flex items-center justify-between mb-14">
           <div className="flex items-center gap-3">
             <Image
               src="/icon.png"
               alt="CleanLabel"
-              width={56}
-              height={56}
+              width={52}
+              height={52}
               className="rounded-2xl"
             />
-            <div>
-              <span className="text-white text-[28px] font-black tracking-tight block leading-tight">
-                Clean<span className="text-emerald-400">Label</span>
-              </span>
-              <span className="text-gray-500 text-[16px] font-medium">
-                AI Food Scanner
-              </span>
-            </div>
-          </div>
-
-          {/* Middle */}
-          <div>
-            <h2 className="text-[62px] leading-[1.05] font-black text-white tracking-tight mb-8">
-              Scan Any
-              <br />
-              Label.
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                Know Every
-                <br />
-                Toxin.
-              </span>
-            </h2>
-
-            <div className="space-y-5">
-              {[
-                "AI reads actual ingredients",
-                "Flags toxins in seconds",
-                "Personalized to your diet",
-                "No barcodes needed",
-              ].map((point) => (
-                <div key={point} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 text-emerald-400" />
-                  </div>
-                  <span className="text-gray-300 text-[22px] font-semibold">
-                    {point}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom */}
-          <div className="flex items-center gap-5">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-5 h-5 fill-amber-400 text-amber-400"
-                />
-              ))}
-            </div>
-            <span className="text-gray-400 text-[18px] font-medium">
-              Free on iOS
+            <span
+              style={{
+                fontSize: 28,
+                fontWeight: 900,
+                color: "white",
+                letterSpacing: "-0.5px",
+              }}
+            >
+              Clean<span style={{ color: "#34d399" }}>Label</span>
             </span>
           </div>
+          <span style={{ fontSize: 18, color: "#6b7280", fontWeight: 600 }}>
+            AI Food Scanner
+          </span>
         </div>
 
-        {/* Right side - Screenshot */}
-        <div className="flex items-center justify-center pr-10">
-          <div className="relative">
-            <div className="absolute -inset-8 bg-emerald-500/10 blur-[60px] rounded-full" />
-            <div className="relative w-[380px] rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/60">
-              <Image
-                src="/ss/01.png"
-                alt="CleanLabel scanner"
-                width={380}
-                height={823}
-                className="w-full h-auto"
-              />
+        {/* Headline */}
+        <div className="mb-12">
+          <p
+            style={{
+              fontSize: 22,
+              color: "#6b7280",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              marginBottom: 12,
+            }}
+          >
+            What Your Label Is Hiding
+          </p>
+          <h2
+            style={{
+              fontSize: 64,
+              fontWeight: 900,
+              color: "white",
+              lineHeight: 1.05,
+              letterSpacing: "-1.5px",
+            }}
+          >
+            You Read It.
+            <br />
+            <span style={{ color: "#34d399" }}>We Decode It.</span>
+          </h2>
+        </div>
+
+        {/* Decode rows */}
+        <div className="flex-1 flex flex-col justify-center gap-5">
+          {decoded.map(({ raw, real }) => (
+            <div key={raw} className="flex items-center gap-0">
+              {/* Left: what label says */}
+              <div
+                className="flex-1 flex items-center gap-4 rounded-2xl border border-white/8 px-7 py-5"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+              >
+                <X className="w-5 h-5 shrink-0" style={{ color: "#ef4444" }} />
+                <span
+                  style={{ fontSize: 24, color: "#9ca3af", fontWeight: 600 }}
+                >
+                  {raw}
+                </span>
+              </div>
+
+              {/* Arrow */}
+              <div className="flex items-center justify-center w-16 shrink-0">
+                <div
+                  style={{ fontSize: 28, color: "#34d399", fontWeight: 900 }}
+                >
+                  →
+                </div>
+              </div>
+
+              {/* Right: what it actually is */}
+              <div
+                className="flex-1 flex items-center gap-4 rounded-2xl border border-emerald-500/20 px-7 py-5"
+                style={{ background: "rgba(52,211,153,0.06)" }}
+              >
+                <Check
+                  className="w-5 h-5 shrink-0"
+                  style={{ color: "#34d399" }}
+                />
+                <span style={{ fontSize: 24, color: "white", fontWeight: 800 }}>
+                  {real}
+                </span>
+              </div>
             </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="flex items-center justify-between mt-12">
+          <p style={{ fontSize: 20, color: "#6b7280", fontWeight: 600 }}>
+            1 free scan per day · No account needed
+          </p>
+          <div
+            className="rounded-full px-10 py-4"
+            style={{
+              background: "#34d399",
+              color: "#080808",
+              fontSize: 20,
+              fontWeight: 900,
+              letterSpacing: "0.05em",
+            }}
+          >
+            Free on App Store
           </div>
         </div>
       </div>
@@ -210,19 +153,24 @@ function FeedFeature() {
   );
 }
 
-// ── FEED AD 3: Before/After Scan (1080x1080) ──
-function FeedBeforeAfter() {
+// ── FEED 2: The Scan Moment (1080×1080)
+// Hook: show the phone doing its job with result verdict
+function FeedScanMoment() {
   return (
     <div
       className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
+      style={{ width: 1080, height: 1080, fontFamily: "system-ui, sans-serif" }}
     >
-      <div className="absolute inset-0 bg-[#050505]" />
+      <div className="absolute inset-0 bg-[#080808]" />
+      <div className="absolute top-1/2 left-[30%] -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/6 blur-[140px] rounded-full" />
 
-      <div className="relative flex flex-col h-full p-16">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-12">
-          <div className="flex items-center gap-4">
+      <div className="relative h-full flex items-center gap-0">
+        {/* Left: copy */}
+        <div
+          className="flex flex-col justify-between h-full py-[72px] pl-[72px] pr-10"
+          style={{ width: 480 }}
+        >
+          <div className="flex items-center gap-3">
             <Image
               src="/icon.png"
               alt="CleanLabel"
@@ -230,722 +178,1166 @@ function FeedBeforeAfter() {
               height={48}
               className="rounded-xl"
             />
-            <span className="text-white text-[26px] font-black tracking-tight">
-              Clean<span className="text-emerald-400">Label</span>
+            <span style={{ fontSize: 24, fontWeight: 900, color: "white" }}>
+              Clean<span style={{ color: "#34d399" }}>Label</span>
             </span>
           </div>
-          <span className="text-gray-500 text-[18px] font-medium">
-            Free on the App Store
-          </span>
-        </div>
 
-        {/* Title */}
-        <h2 className="text-[56px] leading-[1.05] font-black text-white tracking-tight text-center mb-14">
-          What You See vs.
-          <br />
-          <span className="text-red-500">What&apos;s Actually Inside</span>
-        </h2>
+          <div>
+            <p
+              style={{
+                fontSize: 18,
+                color: "#34d399",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                letterSpacing: "0.15em",
+                marginBottom: 16,
+              }}
+            >
+              3 Seconds Is All It Takes
+            </p>
+            <h2
+              style={{
+                fontSize: 58,
+                fontWeight: 900,
+                color: "white",
+                lineHeight: 1.05,
+                letterSpacing: "-1px",
+                marginBottom: 24,
+              }}
+            >
+              Point.
+              <br />
+              Scan.
+              <br />
+              <span style={{ color: "#34d399" }}>Know.</span>
+            </h2>
+            <p
+              style={{
+                fontSize: 20,
+                color: "#9ca3af",
+                lineHeight: 1.6,
+                marginBottom: 40,
+              }}
+            >
+              CleanLabel reads the actual ingredient text — not a barcode — and
+              tells you exactly what&apos;s harmful and why.
+            </p>
 
-        {/* Split comparison */}
-        <div className="flex-1 grid grid-cols-2 gap-8">
-          {/* Before - what you see */}
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 flex flex-col">
-            <div className="flex items-center gap-3 mb-8">
-              <Eye className="w-7 h-7 text-gray-400" />
-              <span className="text-gray-400 text-[22px] font-bold uppercase tracking-widest">
-                The Label Says
-              </span>
-            </div>
-            <div className="flex-1 flex flex-col justify-center space-y-5">
+            <div className="flex flex-col gap-4">
               {[
-                "Natural Flavors",
-                "Vegetable Oil",
-                "Spice Extractives",
-                "Organic Corn Starch",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-emerald-400" />
+                "Works on any product, anywhere",
+                "Personalized to your diet",
+                "No barcodes. No databases.",
+              ].map((p) => (
+                <div key={p} className="flex items-center gap-3">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center shrink-0"
+                    style={{
+                      background: "rgba(52,211,153,0.15)",
+                      border: "1px solid rgba(52,211,153,0.3)",
+                    }}
+                  >
+                    <Check
+                      className="w-3.5 h-3.5"
+                      style={{ color: "#34d399" }}
+                    />
                   </div>
-                  <span className="text-white text-[24px] font-semibold">
-                    {item}
+                  <span
+                    style={{ fontSize: 18, color: "#d1d5db", fontWeight: 600 }}
+                  >
+                    {p}
                   </span>
                 </div>
               ))}
             </div>
-            <div className="mt-6 text-center">
-              <span className="text-emerald-400 text-[20px] font-bold bg-emerald-500/10 rounded-full px-6 py-2">
-                Looks Clean
-              </span>
-            </div>
           </div>
 
-          {/* After - what AI finds */}
-          <div className="rounded-3xl border border-red-500/20 bg-red-500/[0.03] p-10 flex flex-col">
-            <div className="flex items-center gap-3 mb-8">
-              <Scan className="w-7 h-7 text-red-400" />
-              <span className="text-red-400 text-[22px] font-bold uppercase tracking-widest">
-                AI Detects
-              </span>
+          <div>
+            <div
+              className="rounded-2xl px-8 py-4 text-center"
+              style={{
+                background: "white",
+                color: "#080808",
+                fontSize: 18,
+                fontWeight: 900,
+                letterSpacing: "0.05em",
+                marginBottom: 10,
+              }}
+            >
+              Download Free on iOS
             </div>
-            <div className="flex-1 flex flex-col justify-center space-y-5">
-              {[
-                "Hidden MSG (Yeast Extract)",
-                "Seed Oil (Canola)",
-                "Artificial Color (Red 40)",
-                "Maltodextrin (Sugar Spike)",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center">
-                    <X className="w-4 h-4 text-red-400" />
-                  </div>
-                  <span className="text-red-300 text-[24px] font-semibold">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 text-center">
-              <span className="text-red-400 text-[20px] font-bold bg-red-500/10 rounded-full px-6 py-2">
-                4 Toxins Found
-              </span>
-            </div>
+            <p
+              style={{
+                fontSize: 15,
+                color: "#6b7280",
+                textAlign: "center",
+                fontWeight: 500,
+              }}
+            >
+              1 free scan every day
+            </p>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
 
-// ── FEED AD 4: Social Proof / Trust (1080x1080) ──
-function FeedTrust() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 blur-[150px] rounded-full" />
-
-      <div className="relative flex flex-col items-center justify-between h-full p-16">
-        {/* Icon */}
-        <div className="flex flex-col items-center gap-6">
-          <Image
-            src="/icon.png"
-            alt="CleanLabel"
-            width={120}
-            height={120}
-            className="rounded-[2rem] shadow-2xl"
-          />
-          <span className="text-white text-[36px] font-black tracking-tight">
-            Clean<span className="text-emerald-400">Label</span>
-          </span>
-        </div>
-
-        {/* Center text */}
-        <div className="text-center -mt-4">
-          <h2 className="text-[68px] leading-[1.05] font-black text-white tracking-tight mb-8">
-            Your Food
-            <br />
-            Deserves
-            <br />
-            <span className="text-emerald-400">Transparency</span>
-          </h2>
-          <p className="text-[26px] text-gray-400 max-w-[700px] leading-relaxed">
-            No account. No tracking. No data sold.
-            <br />
-            Just honest ingredient analysis.
-          </p>
-        </div>
-
-        {/* Trust badges */}
-        <div className="flex flex-col items-center gap-8 w-full">
-          <div className="flex items-center gap-10">
-            {[
-              { icon: Lock, text: "Privacy-First" },
-              { icon: Zap, text: "Instant Results" },
-              { icon: ShieldCheck, text: "AI-Powered" },
-            ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-emerald-400" />
-                </div>
-                <span className="text-gray-300 text-[20px] font-bold">
-                  {text}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-6 h-6 fill-amber-400 text-amber-400"
-                />
-              ))}
-            </div>
-            <span className="text-gray-400 text-[22px] font-medium">
-              Free on the App Store
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── STORY AD 1: Scanner in Action (1080x1920) ──
-function StoryScanner() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1920 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-emerald-500/8 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[20%] left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-teal-500/5 blur-[100px] rounded-full" />
-
-      <div className="relative flex flex-col items-center h-full px-16 py-20">
-        {/* Top - App branding */}
-        <div className="flex items-center gap-4 mb-10">
-          <Image
-            src="/icon.png"
-            alt="CleanLabel"
-            width={56}
-            height={56}
-            className="rounded-2xl"
-          />
-          <span className="text-white text-[32px] font-black tracking-tight">
-            Clean<span className="text-emerald-400">Label</span>
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h2 className="text-[72px] leading-[1.05] font-black text-white tracking-tight text-center mb-6">
-          Stop Guessing.
-          <br />
-          <span className="text-emerald-400">Start Scanning.</span>
-        </h2>
-
-        <p className="text-[28px] text-gray-400 text-center mb-14 max-w-[800px]">
-          Point your camera at any ingredient label.
-          <br />
-          Get an instant AI verdict.
-        </p>
-
-        {/* Phone screenshot */}
-        <div className="relative flex-1 flex items-center justify-center">
-          <div className="absolute -inset-16 bg-emerald-500/8 blur-[80px] rounded-full" />
-          <div className="relative w-[480px] rounded-[3rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/60">
-            <Image
-              src="/ss/01.png"
-              alt="CleanLabel scanner"
-              width={480}
-              height={1040}
-              className="w-full h-auto"
+        {/* Right: phone screenshot */}
+        <div
+          className="flex-1 flex items-center justify-center h-full"
+          style={{ paddingRight: 56 }}
+        >
+          <div className="relative">
+            <div
+              className="absolute -inset-12 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse, rgba(52,211,153,0.12) 0%, transparent 70%)",
+              }}
             />
-          </div>
-          {/* Floating badge */}
-          <div className="absolute -right-2 top-[30%] bg-emerald-500 text-white text-[18px] font-bold px-6 py-3 rounded-full shadow-2xl">
-            AI Scanning...
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="flex flex-col items-center gap-5 mt-14">
-          <div className="flex items-center gap-1 mb-1">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-6 h-6 fill-amber-400 text-amber-400"
+            <div
+              className="relative overflow-hidden"
+              style={{
+                width: 380,
+                borderRadius: 48,
+                border: "4px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 40px 100px rgba(0,0,0,0.6)",
+              }}
+            >
+              <Image
+                src="/ss/01.png"
+                alt="CleanLabel scanner"
+                width={380}
+                height={822}
+                style={{ display: "block", width: "100%", height: "auto" }}
               />
-            ))}
+            </div>
+            {/* Live badge */}
+            <div
+              className="absolute flex items-center gap-2"
+              style={{
+                top: 40,
+                right: -20,
+                background: "#080808",
+                border: "1px solid rgba(52,211,153,0.3)",
+                borderRadius: 99,
+                padding: "10px 20px",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+              }}
+            >
+              <div
+                className="w-2.5 h-2.5 rounded-full"
+                style={{
+                  background: "#34d399",
+                  animation: "pulse 2s infinite",
+                }}
+              />
+              <span style={{ fontSize: 15, color: "#34d399", fontWeight: 800 }}>
+                Scanning...
+              </span>
+            </div>
           </div>
-          <div className="bg-white text-black text-[26px] font-black uppercase tracking-widest px-14 py-5 rounded-full">
-            Download Free
-          </div>
-          <span className="text-gray-500 text-[20px]">
-            Available on the App Store
-          </span>
         </div>
       </div>
     </div>
   );
 }
 
-// ── STORY AD 2: Toxic Reveal (1080x1920) ──
-function StoryToxicReveal() {
+// ── FEED 3: The Result (1080×1080)
+// Hook: show the actual toxic result screen — the value is obvious
+function FeedResult() {
   return (
     <div
       className="relative overflow-hidden"
-      style={{ width: 1080, height: 1920 }}
+      style={{ width: 1080, height: 1080, fontFamily: "system-ui, sans-serif" }}
     >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-red-500/8 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-emerald-500/5 blur-[100px] rounded-full" />
+      <div className="absolute inset-0 bg-[#080808]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/6 blur-[140px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-500/4 blur-[120px] rounded-full" />
 
-      <div className="relative flex flex-col items-center h-full px-16 py-20">
+      <div className="relative h-full flex items-center">
+        {/* Left: phone */}
+        <div
+          className="flex items-center justify-center h-full"
+          style={{ paddingLeft: 56, width: 480 }}
+        >
+          <div className="relative">
+            <div
+              className="absolute -inset-12 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse, rgba(239,68,68,0.1) 0%, transparent 70%)",
+              }}
+            />
+            <div
+              className="relative overflow-hidden"
+              style={{
+                width: 340,
+                borderRadius: 44,
+                border: "4px solid rgba(239,68,68,0.2)",
+                boxShadow: "0 40px 100px rgba(0,0,0,0.6)",
+              }}
+            >
+              <Image
+                src="/ss/02.png"
+                alt="CleanLabel results"
+                width={340}
+                height={735}
+                style={{ display: "block", width: "100%", height: "auto" }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Right: copy */}
+        <div className="flex flex-col justify-between h-full py-[72px] pr-[72px] pl-10 flex-1">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/icon.png"
+                alt="CleanLabel"
+                width={48}
+                height={48}
+                className="rounded-xl"
+              />
+              <span style={{ fontSize: 24, fontWeight: 900, color: "white" }}>
+                Clean<span style={{ color: "#34d399" }}>Label</span>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <p
+              style={{
+                fontSize: 18,
+                color: "#f87171",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                letterSpacing: "0.15em",
+                marginBottom: 16,
+              }}
+            >
+              Real Result. Real Product.
+            </p>
+            <h2
+              style={{
+                fontSize: 54,
+                fontWeight: 900,
+                color: "white",
+                lineHeight: 1.05,
+                letterSpacing: "-1px",
+                marginBottom: 28,
+              }}
+            >
+              Your Snack Has
+              <br />
+              <span style={{ color: "#ef4444" }}>10 Harmful</span>
+              <br />
+              Ingredients.
+            </h2>
+            <p
+              style={{
+                fontSize: 20,
+                color: "#9ca3af",
+                lineHeight: 1.6,
+                marginBottom: 36,
+              }}
+            >
+              Seed oils, artificial dyes, hidden MSG — all flagged instantly.
+              This is what CleanLabel shows you every single time you scan.
+            </p>
+
+            {/* Toxin tags */}
+            <div className="flex flex-wrap gap-3">
+              {[
+                "Canola Oil",
+                "Red 40",
+                "MSG",
+                "Maltodextrin",
+                "Yellow 6",
+                "Corn Syrup",
+              ].map((t) => (
+                <span
+                  key={t}
+                  style={{
+                    fontSize: 17,
+                    color: "#f87171",
+                    border: "1px solid rgba(239,68,68,0.3)",
+                    borderRadius: 99,
+                    padding: "6px 18px",
+                    background: "rgba(239,68,68,0.06)",
+                    fontWeight: 700,
+                  }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div
+              className="rounded-2xl px-8 py-4 text-center"
+              style={{
+                background: "#34d399",
+                color: "#080808",
+                fontSize: 18,
+                fontWeight: 900,
+                letterSpacing: "0.05em",
+                marginBottom: 10,
+              }}
+            >
+              Scan Yours — Free on iOS
+            </div>
+            <p
+              style={{
+                fontSize: 15,
+                color: "#6b7280",
+                textAlign: "center",
+                fontWeight: 500,
+              }}
+            >
+              No account · 1 free scan daily
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── FEED 4: The Free Value (1080×1080)
+// Hook: remove every friction point — it's FREE, daily, no account
+function FeedFreeValue() {
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{ width: 1080, height: 1080, fontFamily: "system-ui, sans-serif" }}
+    >
+      <div className="absolute inset-0 bg-[#080808]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/5 blur-[160px] rounded-full" />
+
+      <div className="relative h-full flex flex-col items-center justify-between p-[80px]">
         {/* Top */}
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-3">
           <Image
             src="/icon.png"
             alt="CleanLabel"
-            width={56}
-            height={56}
+            width={52}
+            height={52}
             className="rounded-2xl"
           />
-          <span className="text-white text-[32px] font-black tracking-tight">
-            Clean<span className="text-emerald-400">Label</span>
+          <span style={{ fontSize: 28, fontWeight: 900, color: "white" }}>
+            Clean<span style={{ color: "#34d399" }}>Label</span>
           </span>
         </div>
 
-        {/* Headline */}
-        <h2 className="text-[64px] leading-[1.08] font-black text-white tracking-tight text-center mb-5">
-          We Scanned
-          <br />
-          America&apos;s
-          <br />
-          <span className="text-red-500">#1 Selling Chips</span>
-        </h2>
-
-        <p className="text-[28px] text-gray-400 text-center mb-14">
-          Here&apos;s what the AI found...
-        </p>
-
-        {/* Results screenshot */}
-        <div className="relative flex-1 flex items-center justify-center">
-          <div className="absolute -inset-16 bg-red-500/6 blur-[80px] rounded-full" />
-          <div className="relative w-[480px] rounded-[3rem] overflow-hidden border-4 border-red-500/20 shadow-2xl shadow-black/60">
-            <Image
-              src="/ss/02.png"
-              alt="CleanLabel results showing toxins"
-              width={480}
-              height={1040}
-              className="w-full h-auto"
-            />
-          </div>
-          {/* Warning badge */}
-          <div className="absolute -left-2 top-[25%] bg-red-500 text-white text-[18px] font-bold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
-            <ShieldAlert className="w-5 h-5" />
-            10 Toxins Detected
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="flex flex-col items-center gap-5 mt-14">
-          <p className="text-[24px] text-gray-400 text-center max-w-[700px]">
-            Seed oils, artificial dyes, and MSG —
-            <br />
-            all hiding in plain sight.
-          </p>
-          <div className="bg-emerald-500 text-white text-[26px] font-black uppercase tracking-widest px-14 py-5 rounded-full shadow-lg shadow-emerald-500/25">
-            Scan Your Food Free
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── STORY AD 3: Problem/Solution (1080x1920) ──
-function StoryProblemSolution() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1920 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-
-      <div className="relative flex flex-col h-full px-16 py-20">
-        {/* Top branding */}
-        <div className="flex items-center justify-center gap-4 mb-16">
-          <Image
-            src="/icon.png"
-            alt="CleanLabel"
-            width={48}
-            height={48}
-            className="rounded-xl"
-          />
-          <span className="text-white text-[28px] font-black tracking-tight">
-            Clean<span className="text-emerald-400">Label</span>
-          </span>
-        </div>
-
-        {/* Problem section */}
-        <div className="rounded-[2rem] border border-red-500/20 bg-red-500/[0.03] p-12 mb-10">
-          <div className="flex items-center gap-3 mb-8">
-            <AlertTriangle className="w-8 h-8 text-red-400" />
-            <span className="text-red-400 text-[24px] font-black uppercase tracking-widest">
-              The Problem
+        {/* Center */}
+        <div className="flex flex-col items-center text-center">
+          <div
+            className="flex items-center gap-3 rounded-full px-8 py-3 mb-12"
+            style={{
+              background: "rgba(52,211,153,0.08)",
+              border: "1px solid rgba(52,211,153,0.2)",
+            }}
+          >
+            <Zap className="w-5 h-5" style={{ color: "#34d399" }} />
+            <span
+              style={{
+                fontSize: 18,
+                color: "#34d399",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+              }}
+            >
+              No Catch. Genuinely Free.
             </span>
           </div>
-          <h3 className="text-[48px] leading-[1.1] font-black text-white mb-8">
-            85% of &ldquo;Healthy&rdquo; foods
+
+          <h2
+            style={{
+              fontSize: 80,
+              fontWeight: 900,
+              color: "white",
+              lineHeight: 1.0,
+              letterSpacing: "-2px",
+              marginBottom: 28,
+            }}
+          >
+            Know What&apos;s
             <br />
-            contain hidden toxins
-          </h3>
-          <div className="space-y-5">
-            {[
-              "MSG disguised as 'Yeast Extract'",
-              "Seed oils labeled 'Vegetable Oil'",
-              "Sugar spikes from 'Maltodextrin'",
-              "Banned dyes still in US products",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-4">
-                <X className="w-6 h-6 text-red-400 shrink-0" />
-                <span className="text-gray-300 text-[24px] font-semibold">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Solution section */}
-        <div className="rounded-[2rem] border border-emerald-500/20 bg-emerald-500/[0.03] p-12 mb-10 flex-1">
-          <div className="flex items-center gap-3 mb-8">
-            <ShieldCheck className="w-8 h-8 text-emerald-400" />
-            <span className="text-emerald-400 text-[24px] font-black uppercase tracking-widest">
-              The Solution
-            </span>
-          </div>
-          <h3 className="text-[48px] leading-[1.1] font-black text-white mb-8">
-            CleanLabel&apos;s AI
+            In Your Food.
             <br />
-            catches them all
-          </h3>
-          <div className="space-y-5">
-            {[
-              "Point your camera at any label",
-              "AI reads every ingredient instantly",
-              "Hidden toxins exposed by name",
-              "Personalized to YOUR dietary needs",
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-4">
-                <Check className="w-6 h-6 text-emerald-400 shrink-0" />
-                <span className="text-gray-300 text-[24px] font-semibold">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="flex flex-col items-center gap-5">
-          <div className="bg-white text-black text-[26px] font-black uppercase tracking-widest px-14 py-5 rounded-full">
-            Download Free on iOS
-          </div>
-          <span className="text-gray-500 text-[20px]">
-            No account required
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── CAROUSEL CARDS (1080x1080 each) ──
-function CarouselCard1() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/6 blur-[120px] rounded-full" />
-
-      <div className="relative flex flex-col items-center justify-center h-full p-16 text-center">
-        <div className="w-[160px] h-[160px] rounded-full bg-red-500/10 border-2 border-red-500/25 flex items-center justify-center mb-12 shadow-[0_0_60px_rgba(239,68,68,0.1)]">
-          <AlertTriangle className="w-20 h-20 text-red-500" />
-        </div>
-
-        <h2 className="text-[72px] leading-[1.05] font-black text-white tracking-tight mb-8">
-          Did You Know?
-        </h2>
-
-        <p className="text-[32px] text-gray-300 max-w-[750px] leading-snug mb-10">
-          The average American consumes
-          <br />
-          <span className="text-red-400 font-black text-[40px]">
-            10+ hidden toxins daily
-          </span>
-          <br />
-          without even knowing it.
-        </p>
-
-        <span className="text-gray-500 text-[22px] font-medium">
-          Swipe to see how to fix this &rarr;
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function CarouselCard2() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-[30%] right-0 w-[500px] h-[500px] bg-emerald-500/6 blur-[120px] rounded-full" />
-
-      <div className="relative flex h-full items-center p-16">
-        <div className="flex-1 pr-8">
-          <div className="flex items-center gap-3 mb-8">
-            <Scan className="w-8 h-8 text-emerald-400" />
-            <span className="text-emerald-400 text-[22px] font-bold uppercase tracking-widest">
-              Step 1
-            </span>
-          </div>
-          <h2 className="text-[56px] leading-[1.08] font-black text-white tracking-tight mb-6">
-            Point &
-            <br />
-            Scan
+            <span style={{ color: "#34d399" }}>Every Day.</span>
           </h2>
-          <p className="text-[26px] text-gray-400 leading-relaxed">
-            Just point your camera at any ingredient label. No barcodes needed.
-            Our AI reads the actual text.
+
+          <p
+            style={{
+              fontSize: 24,
+              color: "#9ca3af",
+              lineHeight: 1.6,
+              maxWidth: 680,
+            }}
+          >
+            1 free AI ingredient scan per day. No subscription. No account. Just
+            point your phone at any label and get the truth.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-8 bg-emerald-500/8 blur-[60px] rounded-full" />
-          <div className="relative w-[380px] rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl">
-            <Image
-              src="/ss/01.png"
-              alt="Scanner"
-              width={380}
-              height={823}
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CarouselCard3() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-[30%] left-0 w-[500px] h-[500px] bg-red-500/6 blur-[120px] rounded-full" />
-
-      <div className="relative flex h-full items-center p-16">
-        <div className="relative mr-8">
-          <div className="absolute -inset-8 bg-red-500/6 blur-[60px] rounded-full" />
-          <div className="relative w-[380px] rounded-[2.5rem] overflow-hidden border-4 border-red-500/15 shadow-2xl">
-            <Image
-              src="/ss/02.png"
-              alt="Results"
-              width={380}
-              height={823}
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-
-        <div className="flex-1 pl-8">
-          <div className="flex items-center gap-3 mb-8">
-            <ShieldAlert className="w-8 h-8 text-red-400" />
-            <span className="text-red-400 text-[22px] font-bold uppercase tracking-widest">
-              Step 2
-            </span>
-          </div>
-          <h2 className="text-[56px] leading-[1.08] font-black text-white tracking-tight mb-6">
-            Toxins
-            <br />
-            <span className="text-red-500">Exposed</span>
-          </h2>
-          <p className="text-[26px] text-gray-400 leading-relaxed">
-            Every harmful ingredient flagged instantly. Seed oils, dyes, MSG —
-            nothing hides from our AI.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CarouselCard4() {
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{ width: 1080, height: 1080 }}
-    >
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/5 blur-[150px] rounded-full" />
-
-      <div className="relative flex flex-col items-center justify-center h-full p-16 text-center">
-        <Image
-          src="/icon.png"
-          alt="CleanLabel"
-          width={140}
-          height={140}
-          className="rounded-[2.5rem] shadow-2xl mb-12"
-        />
-
-        <h2 className="text-[68px] leading-[1.05] font-black text-white tracking-tight mb-6">
-          Protect Your
-          <br />
-          <span className="text-emerald-400">Health Today</span>
-        </h2>
-
-        <p className="text-[28px] text-gray-400 mb-14 max-w-[700px]">
-          Join thousands scanning smarter.
-          <br />
-          Free forever. No account needed.
-        </p>
-
-        <div className="bg-white text-black text-[30px] font-black uppercase tracking-widest px-16 py-6 rounded-full mb-8">
-          Download Free
-        </div>
-
-        <div className="flex items-center gap-2">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className="w-7 h-7 fill-amber-400 text-amber-400"
-            />
+        {/* Feature grid */}
+        <div className="grid grid-cols-3 gap-6 w-full">
+          {[
+            { val: "1 scan", label: "Free every day" },
+            { val: "3 sec", label: "To get results" },
+            { val: "0 data", label: "Stored on servers" },
+          ].map(({ val, label }) => (
+            <div
+              key={val}
+              className="flex flex-col items-center rounded-3xl py-8"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.07)",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 42,
+                  fontWeight: 900,
+                  color: "white",
+                  letterSpacing: "-1px",
+                }}
+              >
+                {val}
+              </span>
+              <span
+                style={{
+                  fontSize: 17,
+                  color: "#6b7280",
+                  fontWeight: 600,
+                  marginTop: 6,
+                }}
+              >
+                {label}
+              </span>
+            </div>
           ))}
         </div>
-        <span className="text-gray-500 text-[20px] mt-3">
-          Available on the App Store
-        </span>
+
+        {/* CTA */}
+        <div
+          className="w-full rounded-2xl py-6 text-center"
+          style={{
+            background: "white",
+            color: "#080808",
+            fontSize: 22,
+            fontWeight: 900,
+            letterSpacing: "0.05em",
+          }}
+        >
+          Download Free on iOS
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── STORY 1: The Grocery Moment (1080×1920)
+// Scenario: standing in the aisle, about to make the wrong choice
+function StoryGroceryMoment() {
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{ width: 1080, height: 1920, fontFamily: "system-ui, sans-serif" }}
+    >
+      <div className="absolute inset-0 bg-[#080808]" />
+      <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-emerald-500/7 blur-[140px] rounded-full" />
+      <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-emerald-500/4 blur-[120px] rounded-full" />
+
+      <div className="relative h-full flex flex-col px-[80px] py-[90px]">
+        {/* Brand */}
+        <div className="flex items-center gap-4 mb-16">
+          <Image
+            src="/icon.png"
+            alt="CleanLabel"
+            width={56}
+            height={56}
+            className="rounded-2xl"
+          />
+          <span style={{ fontSize: 30, fontWeight: 900, color: "white" }}>
+            Clean<span style={{ color: "#34d399" }}>Label</span>
+          </span>
+        </div>
+
+        {/* Act 1: The question */}
+        <div className="mb-14">
+          <p
+            style={{
+              fontSize: 22,
+              color: "#6b7280",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              marginBottom: 16,
+            }}
+          >
+            You&apos;re at the grocery store
+          </p>
+          <h2
+            style={{
+              fontSize: 70,
+              fontWeight: 900,
+              color: "white",
+              lineHeight: 1.05,
+              letterSpacing: "-1.5px",
+            }}
+          >
+            Is this snack
+            <br />
+            actually good
+            <br />
+            <span style={{ color: "#34d399" }}>for you?</span>
+          </h2>
+        </div>
+
+        {/* The label problem */}
+        <div
+          className="rounded-3xl p-10 mb-10"
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.08)",
+          }}
+        >
+          <p
+            style={{
+              fontSize: 20,
+              color: "#9ca3af",
+              lineHeight: 1.7,
+              fontWeight: 500,
+            }}
+          >
+            The front says:{" "}
+            <span style={{ color: "white", fontWeight: 700 }}>
+              &ldquo;All Natural&rdquo;
+            </span>{" "}
+            &nbsp;
+            <span style={{ color: "white", fontWeight: 700 }}>
+              &ldquo;No Artificial Colors&rdquo;
+            </span>
+          </p>
+          <p
+            style={{
+              fontSize: 20,
+              color: "#9ca3af",
+              lineHeight: 1.7,
+              fontWeight: 500,
+              marginTop: 8,
+            }}
+          >
+            The ingredients say:{" "}
+            <span style={{ color: "#f87171", fontWeight: 700 }}>
+              something very different.
+            </span>
+          </p>
+        </div>
+
+        {/* Phone */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative">
+            <div
+              className="absolute -inset-16 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse, rgba(52,211,153,0.1) 0%, transparent 70%)",
+              }}
+            />
+            <div
+              className="relative overflow-hidden"
+              style={{
+                width: 420,
+                borderRadius: 52,
+                border: "4px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 40px 120px rgba(0,0,0,0.7)",
+              }}
+            >
+              <Image
+                src="/ss/01.png"
+                alt="CleanLabel scanning"
+                width={420}
+                height={909}
+                style={{ display: "block", width: "100%", height: "auto" }}
+              />
+            </div>
+            <div
+              className="absolute flex items-center gap-2"
+              style={{
+                bottom: -20,
+                left: "50%",
+                transform: "translateX(-50%)",
+                background: "#34d399",
+                borderRadius: 99,
+                padding: "12px 28px",
+                boxShadow: "0 8px 32px rgba(52,211,153,0.3)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span style={{ fontSize: 18, color: "#080808", fontWeight: 900 }}>
+                Scanning ingredients...
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="flex flex-col items-center gap-5 mt-20">
+          <div
+            className="w-full rounded-2xl py-6 text-center"
+            style={{
+              background: "white",
+              color: "#080808",
+              fontSize: 24,
+              fontWeight: 900,
+            }}
+          >
+            Download Free on iOS
+          </div>
+          <p style={{ fontSize: 18, color: "#6b7280", fontWeight: 600 }}>
+            1 free scan every day · No account needed
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── STORY 2: Before & After (1080×1920)
+// The transformation: ignorance → knowledge
+function StoryBeforeAfter() {
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{ width: 1080, height: 1920, fontFamily: "system-ui, sans-serif" }}
+    >
+      <div className="absolute inset-0 bg-[#080808]" />
+
+      <div className="relative h-full flex flex-col px-[80px] py-[90px]">
+        {/* Brand */}
+        <div className="flex items-center gap-4 mb-14">
+          <Image
+            src="/icon.png"
+            alt="CleanLabel"
+            width={56}
+            height={56}
+            className="rounded-2xl"
+          />
+          <span style={{ fontSize: 30, fontWeight: 900, color: "white" }}>
+            Clean<span style={{ color: "#34d399" }}>Label</span>
+          </span>
+        </div>
+
+        <h2
+          style={{
+            fontSize: 64,
+            fontWeight: 900,
+            color: "white",
+            lineHeight: 1.05,
+            letterSpacing: "-1.5px",
+            marginBottom: 14,
+          }}
+        >
+          Before CleanLabel
+          <br />
+          vs After.
+        </h2>
+        <p
+          style={{
+            fontSize: 22,
+            color: "#6b7280",
+            marginBottom: 48,
+            fontWeight: 500,
+          }}
+        >
+          The difference is what you know.
+        </p>
+
+        {/* Before block */}
+        <div
+          className="rounded-3xl p-10 mb-8"
+          style={{
+            background: "rgba(239,68,68,0.05)",
+            border: "1px solid rgba(239,68,68,0.2)",
+            flex: 1,
+          }}
+        >
+          <p
+            style={{
+              fontSize: 18,
+              color: "#f87171",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              marginBottom: 24,
+            }}
+          >
+            ✕ &nbsp;Before
+          </p>
+          <div className="flex flex-col gap-5">
+            {[
+              'You see "Natural Flavors" — sounds fine',
+              'You buy the "No Artificial Colors" version',
+              'You trust the "Organic" badge on the front',
+              "You don't know what Maltodextrin does to you",
+              "You eat it. Again. And again.",
+            ].map((t) => (
+              <div key={t} className="flex items-start gap-4">
+                <X
+                  className="w-6 h-6 shrink-0 mt-1"
+                  style={{ color: "#ef4444" }}
+                />
+                <span
+                  style={{
+                    fontSize: 22,
+                    color: "#9ca3af",
+                    fontWeight: 500,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {t}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* After block */}
+        <div
+          className="rounded-3xl p-10 mb-14"
+          style={{
+            background: "rgba(52,211,153,0.05)",
+            border: "1px solid rgba(52,211,153,0.2)",
+            flex: 1,
+          }}
+        >
+          <p
+            style={{
+              fontSize: 18,
+              color: "#34d399",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              marginBottom: 24,
+            }}
+          >
+            ✓ &nbsp;After CleanLabel
+          </p>
+          <div className="flex flex-col gap-5">
+            {[
+              "You scan. AI reads every single ingredient",
+              "Toxins flagged by their real name instantly",
+              "You know exactly what you're putting in your body",
+              "You put the product back. You choose better.",
+              "You eat with confidence.",
+            ].map((t) => (
+              <div key={t} className="flex items-start gap-4">
+                <Check
+                  className="w-6 h-6 shrink-0 mt-1"
+                  style={{ color: "#34d399" }}
+                />
+                <span
+                  style={{
+                    fontSize: 22,
+                    color: "white",
+                    fontWeight: 600,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {t}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div
+          className="w-full rounded-2xl py-6 text-center"
+          style={{
+            background: "#34d399",
+            color: "#080808",
+            fontSize: 24,
+            fontWeight: 900,
+            marginBottom: 14,
+          }}
+        >
+          Start Scanning Free
+        </div>
+        <p
+          style={{
+            fontSize: 18,
+            color: "#6b7280",
+            textAlign: "center",
+            fontWeight: 600,
+          }}
+        >
+          iOS · 1 free scan per day · No account
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ── STORY 3: The Result Close-Up (1080×1920)
+// Let the app speak for itself — show the full result screen with context
+function StoryResultCloseUp() {
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{ width: 1080, height: 1920, fontFamily: "system-ui, sans-serif" }}
+    >
+      <div className="absolute inset-0 bg-[#080808]" />
+      <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-red-500/6 blur-[140px] rounded-full" />
+      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-emerald-500/4 blur-[120px] rounded-full" />
+
+      <div className="relative h-full flex flex-col px-[80px] py-[90px]">
+        {/* Brand */}
+        <div className="flex items-center gap-4 mb-14">
+          <Image
+            src="/icon.png"
+            alt="CleanLabel"
+            width={56}
+            height={56}
+            className="rounded-2xl"
+          />
+          <span style={{ fontSize: 30, fontWeight: 900, color: "white" }}>
+            Clean<span style={{ color: "#34d399" }}>Label</span>
+          </span>
+        </div>
+
+        <h2
+          style={{
+            fontSize: 62,
+            fontWeight: 900,
+            color: "white",
+            lineHeight: 1.05,
+            letterSpacing: "-1.5px",
+            marginBottom: 10,
+          }}
+        >
+          This is what we
+          <br />
+          found in your
+          <br />
+          <span style={{ color: "#ef4444" }}>&ldquo;healthy&rdquo; chips.</span>
+        </h2>
+        <p
+          style={{
+            fontSize: 22,
+            color: "#6b7280",
+            marginBottom: 48,
+            fontWeight: 500,
+            lineHeight: 1.6,
+          }}
+        >
+          One scan. Instant verdict. No guessing.
+        </p>
+
+        {/* Full result screenshot */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative">
+            <div
+              className="absolute -inset-16 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse, rgba(239,68,68,0.08) 0%, transparent 70%)",
+              }}
+            />
+            <div
+              className="relative overflow-hidden"
+              style={{
+                width: 460,
+                borderRadius: 52,
+                border: "4px solid rgba(239,68,68,0.2)",
+                boxShadow: "0 40px 120px rgba(0,0,0,0.7)",
+              }}
+            >
+              <Image
+                src="/ss/02.png"
+                alt="Toxin results"
+                width={460}
+                height={996}
+                style={{ display: "block", width: "100%", height: "auto" }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Callout */}
+        <div
+          className="rounded-3xl p-8 my-10"
+          style={{
+            background: "rgba(239,68,68,0.06)",
+            border: "1px solid rgba(239,68,68,0.2)",
+          }}
+        >
+          <p
+            style={{
+              fontSize: 22,
+              color: "#f87171",
+              fontWeight: 700,
+              lineHeight: 1.6,
+              textAlign: "center",
+            }}
+          >
+            10 harmful ingredients found — including seed oils, artificial dyes,
+            and hidden MSG. All in one &ldquo;snack.&rdquo;
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div
+          className="w-full rounded-2xl py-6 text-center"
+          style={{
+            background: "white",
+            color: "#080808",
+            fontSize: 24,
+            fontWeight: 900,
+            marginBottom: 14,
+          }}
+        >
+          Scan Your Food Free
+        </div>
+        <p
+          style={{
+            fontSize: 18,
+            color: "#6b7280",
+            textAlign: "center",
+            fontWeight: 600,
+          }}
+        >
+          Free on iOS · No account needed
+        </p>
       </div>
     </div>
   );
 }
 
 /* ─────────────────────────────────────────────
-   Main Ads Gallery Page
-   ───────────────────────────────────────────── */
+   Gallery page
+───────────────────────────────────────────── */
 
 const ADS = [
   {
-    id: "feed-shock",
-    label: "Feed — Shock Discovery",
-    format: "1080 x 1080",
-    component: FeedShock,
+    id: "feed-decode",
+    label: "Feed — The Decode",
+    format: "1080 × 1080",
+    component: FeedDecode,
   },
   {
-    id: "feed-feature",
-    label: "Feed — Feature Showcase",
-    format: "1080 x 1080",
-    component: FeedFeature,
+    id: "feed-scan",
+    label: "Feed — The Scan Moment",
+    format: "1080 × 1080",
+    component: FeedScanMoment,
   },
   {
-    id: "feed-before-after",
-    label: "Feed — Before vs After",
-    format: "1080 x 1080",
-    component: FeedBeforeAfter,
+    id: "feed-result",
+    label: "Feed — The Result",
+    format: "1080 × 1080",
+    component: FeedResult,
   },
   {
-    id: "feed-trust",
-    label: "Feed — Trust / Privacy",
-    format: "1080 x 1080",
-    component: FeedTrust,
+    id: "feed-free",
+    label: "Feed — Free Value",
+    format: "1080 × 1080",
+    component: FeedFreeValue,
   },
   {
-    id: "story-scanner",
-    label: "Story — Scanner in Action",
-    format: "1080 x 1920",
-    component: StoryScanner,
+    id: "story-grocery",
+    label: "Story — Grocery Moment",
+    format: "1080 × 1920",
+    component: StoryGroceryMoment,
   },
   {
-    id: "story-toxic",
-    label: "Story — Toxic Reveal",
-    format: "1080 x 1920",
-    component: StoryToxicReveal,
+    id: "story-before",
+    label: "Story — Before & After",
+    format: "1080 × 1920",
+    component: StoryBeforeAfter,
   },
   {
-    id: "story-problem",
-    label: "Story — Problem / Solution",
-    format: "1080 x 1920",
-    component: StoryProblemSolution,
-  },
-  {
-    id: "carousel-1",
-    label: "Carousel 1 — Hook",
-    format: "1080 x 1080",
-    component: CarouselCard1,
-  },
-  {
-    id: "carousel-2",
-    label: "Carousel 2 — Scan",
-    format: "1080 x 1080",
-    component: CarouselCard2,
-  },
-  {
-    id: "carousel-3",
-    label: "Carousel 3 — Results",
-    format: "1080 x 1080",
-    component: CarouselCard3,
-  },
-  {
-    id: "carousel-4",
-    label: "Carousel 4 — CTA",
-    format: "1080 x 1080",
-    component: CarouselCard4,
+    id: "story-result",
+    label: "Story — Result Close-Up",
+    format: "1080 × 1920",
+    component: StoryResultCloseUp,
   },
 ];
 
 export default function AdsPage() {
   const [current, setCurrent] = useState(0);
+  const [downloading, setDownloading] = useState(false);
+  const captureRef = useRef<HTMLDivElement>(null);
+
   const ad = ADS[current];
   const Component = ad.component;
+  const isStory = ad.format.includes("1920");
+  const scale = isStory ? 0.32 : 0.5;
+  const [w, h] = ad.format.replace(/\s/g, "").split("×").map(Number);
+
+  async function handleDownload() {
+    if (!captureRef.current || downloading) return;
+    setDownloading(true);
+    try {
+      const { toPng } = await import("html-to-image");
+
+      // Wait for every <img> inside the capture target to fully load
+      const imgs = Array.from(captureRef.current.querySelectorAll("img"));
+      await Promise.all(
+        imgs.map((img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise<void>((res) => {
+                img.onload = () => res();
+                img.onerror = () => res();
+              })
+        )
+      );
+
+      // Extra paint frame to ensure everything is rendered
+      await new Promise((r) => requestAnimationFrame(r));
+      await new Promise((r) => setTimeout(r, 80));
+
+      // Capture at 2× density — output: 2160×2160 (feed) or 2160×3840 (story)
+      // html-to-image needs two passes to fully embed external resources
+      await toPng(captureRef.current, { width: w, height: h, pixelRatio: 2, cacheBust: true });
+      const dataUrl = await toPng(captureRef.current, {
+        width: w,
+        height: h,
+        pixelRatio: 2,
+        cacheBust: true,
+        includeQueryParams: true,
+      });
+
+      const link = document.createElement("a");
+      link.download = `cleanlabel-${ad.id}@2x.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error("Download failed:", err);
+    } finally {
+      setDownloading(false);
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white">
-      {/* Controls bar */}
-      <div className="sticky top-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-white/10">
+    <div className="min-h-screen bg-[#080808] text-white">
+      {/* Hidden full-resolution capture target */}
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: w,
+          height: h,
+          zIndex: -1,
+          pointerEvents: "none",
+          opacity: 0,
+        }}
+      >
+        <div ref={captureRef} style={{ width: w, height: h }}>
+          <Component />
+        </div>
+      </div>
+
+      {/* Top bar */}
+      <div className="sticky top-0 z-50 bg-[#080808]/90 backdrop-blur-xl border-b border-white/8">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold">
-              Ad Creatives{" "}
-              <span className="text-gray-500 font-normal">
-                ({current + 1}/{ADS.length})
+            <h1 className="text-base font-bold">
+              Ad Creatives
+              <span className="text-gray-500 font-normal ml-2 text-sm">
+                {current + 1} / {ADS.length}
               </span>
             </h1>
-            <p className="text-sm text-gray-500">
-              {ad.label} &middot; {ad.format}
+            <p className="text-xs text-gray-500 mt-0.5">
+              {ad.label} · {ad.format} px
             </p>
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Prev / Next */}
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() =>
+                  setCurrent((p) => (p - 1 + ADS.length) % ADS.length)
+                }
+                className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => setCurrent((p) => (p + 1) % ADS.length)}
+                className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Download */}
             <button
-              onClick={() =>
-                setCurrent((p) => (p - 1 + ADS.length) % ADS.length)
-              }
-              className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              onClick={handleDownload}
+              disabled={downloading}
+              className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 disabled:opacity-60 disabled:cursor-not-allowed text-black text-xs font-black uppercase tracking-widest px-5 py-2.5 rounded-xl transition-all active:scale-95"
             >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => setCurrent((p) => (p + 1) % ADS.length)}
-              className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
+              {downloading ? (
+                <>
+                  <svg
+                    className="w-4 h-4 animate-spin"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8z"
+                    />
+                  </svg>
+                  Rendering...
+                </>
+              ) : (
+                <>
+                  <svg
+                    className="w-4 h-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path
+                      d="M12 3v13M6 11l6 6 6-6M3 21h18"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Download PNG
+                </>
+              )}
             </button>
           </div>
         </div>
 
-        {/* Thumbnails */}
-        <div className="max-w-7xl mx-auto px-6 pb-4 flex gap-2 overflow-x-auto">
+        {/* Tab strip */}
+        <div className="max-w-7xl mx-auto px-6 pb-3 flex gap-2 overflow-x-auto scrollbar-none">
           {ADS.map((a, i) => (
             <button
               key={a.id}
               onClick={() => setCurrent(i)}
-              className={`shrink-0 text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors ${
+              className={`shrink-0 text-xs font-bold px-4 py-2 rounded-xl transition-all ${
                 i === current
-                  ? "bg-emerald-500 text-white"
+                  ? "bg-emerald-500 text-black"
                   : "bg-white/5 text-gray-400 hover:bg-white/10"
               }`}
             >
@@ -955,23 +1347,26 @@ export default function AdsPage() {
         </div>
       </div>
 
-      {/* Canvas - scrollable container for the fixed-size ad */}
-      <div className="flex justify-center py-10 overflow-auto">
+      {/* Preview canvas */}
+      <div
+        className="flex justify-center items-start overflow-auto py-10"
+        style={{ minHeight: isStory ? 700 : 580 }}
+      >
         <div
-          className="shrink-0 shadow-2xl shadow-black/50 border border-white/5"
-          style={{ transform: "scale(0.5)", transformOrigin: "top center" }}
+          className="shrink-0 border border-white/5 shadow-2xl shadow-black/80"
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "top center",
+            marginBottom: isStory ? h * scale - h * (1 - scale) + 40 : 0,
+          }}
         >
           <Component />
         </div>
       </div>
 
-      {/* Instructions */}
-      <div className="max-w-2xl mx-auto px-6 pb-16 text-center">
-        <p className="text-gray-500 text-sm">
-          Each creative is rendered at exact pixel dimensions ({ad.format}).
-          <br />
-          To screenshot at full resolution: open browser DevTools, set device to{" "}
-          {ad.format.replace(" x ", "x")}, then capture.
+      <div className="pb-16 text-center">
+        <p className="text-gray-600 text-xs">
+          Downloads at exact {ad.format} px · Ready for Meta Ads Manager
         </p>
       </div>
     </div>

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Shield, X, Menu, Apple } from "lucide-react";
+import { X, Menu, Apple } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-100 flex justify-center pt-4 sm:pt-6 pointer-events-none px-4">
+    <nav className="fixed  left-0 right-0 z-40 flex justify-center pt-4 sm:pt-6 pointer-events-none px-4">
       <div
         className={`
         relative max-w-7xl w-full mx-auto px-6 h-16 flex items-center justify-between pointer-events-auto
@@ -52,12 +53,12 @@ export function Navbar() {
               {item}
             </a>
           ))}
-          <a
+          <Link
             href="/blog"
             className="text-xs font-black uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300"
           >
             Blog
-          </a>
+          </Link>
         </div>
 
         {/* Desktop CTA */}
@@ -93,13 +94,13 @@ export function Navbar() {
                 {item}
               </a>
             ))}
-            <a
+            <Link
               href="/blog"
               onClick={() => setOpen(false)}
               className="block text-lg font-bold text-gray-300 hover:text-white transition-colors"
             >
               Blog
-            </a>
+            </Link>
             <a
               href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
               target="_blank"
