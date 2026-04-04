@@ -21,7 +21,7 @@ CleanLabel is an AI-powered ingredient analysis tool that helps users understand
 
 ### Free Tier
 
-- Users receive 1 free AI label scan per day.
+- Users receive 3 free AI scans per week.
 - Free scan resets daily at midnight.
 
 ### Premium Subscription

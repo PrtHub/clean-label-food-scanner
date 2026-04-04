@@ -1347,7 +1347,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p><strong>Best for:</strong> People who want nutrition tracking alongside ingredient scanning, or who are newer to food label reading.</p>
 
       <h2>6. CleanLabel</h2>
-      <p><strong>Platform:</strong> iOS | <strong>Price:</strong> Free (1 scan/day) / $4.99/week or $29.99/year</p>
+      <p><strong>Platform:</strong> iOS | <strong>Price:</strong> Free (3 scans/week) / $4.99/week or $29.99/year</p>
       <p>CleanLabel takes a fundamentally different approach: instead of relying on a barcode database, it uses AI to <strong>read the actual ingredient text</strong> through your camera. Point your phone at any ingredient list — on a foreign product, a fresh-baked item, a restaurant menu — and get an instant analysis.</p>
       <p><strong>Strengths:</strong> No barcode required — works on any product with visible ingredients, including imported products not in any database. Real-time AI ingredient analysis rather than database lookup. Specific flagging for seed oils (all variants including "vegetable oil"), MSG and its 30+ aliases, artificial dyes, carrageenan, and other emerging concerns. 15+ dietary profiles including carnivore, keto, Whole30, paleo. Privacy-first: no account required, scan history stored encrypted on-device. Clean, fast interface.</p>
       <p><strong>Weaknesses:</strong> iOS only (Android in development). Requires good lighting and legible text for camera scanning. Newer than some competitors — app store reviews are growing but less numerous than Yuka's 50M+ user base.</p>

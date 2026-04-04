@@ -48,7 +48,7 @@ This guide contains a complete 7-day posting strategy, including the exact copy 
 
   No barcodes, no outdated databases. Just AI reading the text directly.
 
-  It’s free to download with 1 free scan per day. Let me know what you think!
+  It’s free to download with 3 free scans per week. Let me know what you think!
 
   **App Store:** [https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713](https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713)
 

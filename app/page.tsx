@@ -44,7 +44,7 @@ export default function Home() {
             "@type": "Offer",
             price: "0",
             priceCurrency: "USD",
-            description: "Free tier — 1 AI scan per day",
+            description: "Free tier — 3 AI scans per week",
           },
           {
             "@type": "Offer",

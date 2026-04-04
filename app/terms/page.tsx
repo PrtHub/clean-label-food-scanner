@@ -83,7 +83,7 @@ export default function TermsPage() {
                   Free Tier
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
-                  <li>1 free AI label scan per day</li>
+                  <li>3 free AI scans per week</li>
                   <li>Free scan resets daily at midnight</li>
                 </ul>
               </div>

@@ -57,7 +57,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     q: "How much is CleanLabel Pro?",
-    a: "CleanLabel is free to download and includes 1 free scan per day. Pro unlocks unlimited high-precision scans for $4.99/week or $29.99/year.",
+    a: "CleanLabel is free to download and includes 3 free scans per week. Pro unlocks unlimited high-precision scans for $4.99/week or $29.99/year.",
   },
   {
     q: "Does it work outside the US?",

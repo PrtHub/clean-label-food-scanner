@@ -32,7 +32,7 @@ const FAQ = [
   {
     icon: RefreshCw,
     q: "When do my free scans reset?",
-    a: "You get 1 free AI scan per day, which resets daily at midnight. Upgrading to Pro gives you unlimited scans.",
+    a: "You get 3 free AI scans per week, which resets daily at midnight. Upgrading to Pro gives you unlimited scans.",
   },
   {
     icon: CreditCard,

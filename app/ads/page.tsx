@@ -133,7 +133,7 @@ function FeedDecode() {
         {/* Bottom CTA */}
         <div className="flex items-center justify-between mt-12">
           <p style={{ fontSize: 20, color: "#6b7280", fontWeight: 600 }}>
-            1 free scan per day · No account needed
+            3 free scans per week · No account needed
           </p>
           <div
             className="rounded-full px-10 py-4"
@@ -275,7 +275,7 @@ function FeedScanMoment() {
                 fontWeight: 500,
               }}
             >
-              1 free scan every day
+              3 free scans per week
             </p>
           </div>
         </div>
@@ -495,7 +495,7 @@ function FeedResult() {
                 fontWeight: 500,
               }}
             >
-              No account · 1 free scan daily
+              No account · 3 free scans per week
             </p>
           </div>
         </div>
@@ -800,7 +800,7 @@ function StoryGroceryMoment() {
             Download Free on iOS
           </div>
           <p style={{ fontSize: 18, color: "#6b7280", fontWeight: 600 }}>
-            1 free scan every day · No account needed
+            3 free scans per week · No account needed
           </p>
         </div>
       </div>
@@ -977,7 +977,7 @@ function StoryBeforeAfter() {
             fontWeight: 600,
           }}
         >
-          iOS · 1 free scan per day · No account
+          iOS · 3 free scans per week · No account
         </p>
       </div>
     </div>
