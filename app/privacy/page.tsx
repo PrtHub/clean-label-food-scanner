@@ -40,7 +40,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-gray-500 text-sm mb-12">
-          Last updated: March 22, 2026
+          Last updated: April 17, 2026
         </p>
 
         <div className="space-y-12 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mb-4 [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-gray-200 [&_h3]:mb-3 [&_h3]:mt-6 [&_p]:leading-relaxed [&_p]:mb-4 [&_li]:leading-relaxed">
@@ -63,14 +63,23 @@ export default function PrivacyPage() {
             <h3>2.1 Information You Provide</h3>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>
-                <strong className="text-white">Dietary Preferences:</strong> The
-                dietary filters you enable (e.g., Vegan, Keto, Seed Oil Free,
-                custom filters). Stored locally on your device.
+                <strong className="text-white">Dietary Preferences:</strong>{" "}
+                Diet filters you enable (e.g., Vegan, Keto, Seed Oil Free) and
+                any custom filters. Stored locally on your device.
               </li>
               <li>
-                <strong className="text-white">Custom Filters:</strong> Any
-                custom dietary restrictions you add are stored locally on your
-                device only.
+                <strong className="text-white">
+                  Allergies &amp; Restrictions:
+                </strong>{" "}
+                Food allergen selections (e.g., Nut-Free, Shellfish-Free). Stored
+                locally on your device.
+              </li>
+              <li>
+                <strong className="text-white">Onboarding Answers:</strong>{" "}
+                Non-identifying responses you provide during onboarding (health
+                goals, shopping frequency, label-reading habits, who
+                you&apos;re protecting, health concerns). Used to personalize
+                your experience and stored locally on your device.
               </li>
             </ul>
 
@@ -95,9 +104,20 @@ export default function PrivacyPage() {
                 weekly scan resets.
               </li>
               <li>
-                <strong className="text-white">App Usage:</strong> Basic,
-                anonymized usage data may be collected via Apple&apos;s built-in
-                analytics to help us improve the App.
+                <strong className="text-white">Analytics:</strong> Anonymous
+                usage data (e.g., scan count, onboarding completion, paywall
+                views) is collected via{" "}
+                <strong className="text-white">Mixpanel</strong> to help us
+                improve the App. No personally identifiable information is sent
+                to Mixpanel.
+              </li>
+              <li>
+                <strong className="text-white">
+                  Ingredient Education Queries:
+                </strong>{" "}
+                When you tap on a flagged ingredient not in our local database,
+                the ingredient name (not any personal data) is sent to our AI
+                service to generate educational content.
               </li>
             </ul>
 
@@ -126,7 +146,12 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody className="divide-y divide-white/[0.04]">
                   {[
-                    ["Dietary preferences", "Personalise AI analysis results"],
+                    ["Dietary preferences", "Personalize AI analysis results"],
+                    ["Allergies & restrictions", "Flag allergens in every scan"],
+                    [
+                      "Onboarding answers",
+                      "Personalize your experience (stored locally)",
+                    ],
                     [
                       "Scan images",
                       "Real-time AI ingredient analysis (not stored)",
@@ -135,7 +160,7 @@ export default function PrivacyPage() {
                     ["Push Tokens", "Send reset notifications (if enabled)"],
                     [
                       "Anonymous usage data",
-                      "Improve App performance and features",
+                      "Improve App performance via Mixpanel",
                     ],
                   ].map(([data, purpose]) => (
                     <tr key={data}>
@@ -191,7 +216,8 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody className="divide-y divide-white/[0.04]">
                   {[
-                    ["OpenRouter / Gemini AI", "AI ingredient analysis"],
+                    ["OpenRouter / Gemini AI", "AI ingredient & label analysis"],
+                    ["Mixpanel", "Anonymous usage analytics"],
                     ["RevenueCat", "Subscription & entitlements"],
                     ["Apple App Store", "Subscription billing"],
                     ["Expo / React Native", "App framework"],
@@ -229,6 +255,12 @@ export default function PrivacyPage() {
                 <strong className="text-white">Scan images:</strong> Not
                 retained — processed in real-time and discarded.
               </li>
+              <li>
+                <strong className="text-white">Analytics data:</strong>{" "}
+                Anonymous usage data is retained by Mixpanel according to their
+                retention policy. This data cannot be linked back to your
+                identity.
+              </li>
             </ul>
           </section>
 
@@ -261,7 +293,22 @@ export default function PrivacyPage() {
 
           {/* 9 */}
           <section>
-            <h2>9. Changes to This Policy</h2>
+            <h2>9. California & EU Residents</h2>
+            <p>
+              If you are a resident of California or the European Union, you
+              have additional rights under the CCPA and GDPR, including the
+              right to know what personal information is collected, request
+              deletion, and opt out of data sharing. Since CleanLabel does not
+              collect personally identifiable information and stores all user
+              data locally on your device, most of these rights are fulfilled by
+              default. You can contact us at pritamfinds@gmail.com to exercise
+              any remaining rights.
+            </p>
+          </section>
+
+          {/* 10 */}
+          <section>
+            <h2>10. Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. We will
               notify users of significant changes through the App. Continued use
@@ -270,9 +317,9 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 10 */}
+          {/* 11 */}
           <section>
-            <h2>10. Contact</h2>
+            <h2>11. Contact</h2>
             <p>
               If you have any questions or concerns about this Privacy Policy,
               please contact us at:{" "}

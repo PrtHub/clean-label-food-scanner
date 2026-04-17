@@ -46,9 +46,10 @@ Instead of a lookup database (which is often out of date), CleanLabel uses **Gem
 
 ## 💰 Monetization Strategy (RevenueCat)
 
-- **Hard Paywall**: The Magic Moment scan hooks the user, then the hard paywall drops.
-- **Annual Plan**: **$19.99/yr** with a **3-Day Free Trial** (Primary conversion tool).
-- **Weekly Plan**: **$3.99/wk** (High-margin secondary option capturing impulsive users; no monthly option enforces annual preference).
+- **Free Tier**: **1 AI Scan/Week** (Reset every Monday).
+- **Weekly Plan**: **$6.99/wk** (High-margin option for immediate utility).
+- **Annual Plan**: **$49.99/yr** (Primary conversion goal).
+- **Lifetime Plan**: **$99.99 one-time** (Capture high-LTV users).
 - **Global Guarding**: `useUserStore` handles pro-status (`isPremium`) checks globally.
 
 ---

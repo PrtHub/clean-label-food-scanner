@@ -3,10 +3,8 @@ import {
   Check,
   Flame,
   Zap,
-  History,
   UserCheck,
   Search,
-  ShieldCheck,
   Sparkles,
   Lock,
 } from "lucide-react";
@@ -47,7 +45,7 @@ export function Showcase() {
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
             A Healthier Life, <br />
-            <span className="text-transparent bg-clip-text bg-[#10B981] bg-size-[200%_100%] animate-gradient-x">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-size-[200%_100%] animate-gradient-x">
               Simplified.
             </span>
           </h2>
@@ -148,7 +146,7 @@ export function Showcase() {
               <p className="text-gray-400 text-lg mb-10 leading-relaxed max-w-lg">
                 Companies hide toxins under scientific aliases. Our AI
                 identifies hidden MSG, hidden sugars, and harmful additives
-                masked as "natural flavors".
+                masked as &ldquo;natural flavors&rdquo;.
               </p>
               <div className="flex flex-col gap-5">
                 {RESULTS_POINTS.map((point) => (

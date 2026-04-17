@@ -83,8 +83,9 @@ export default function TermsPage() {
                   Free Tier
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
-                  <li>3 free AI scans per week</li>
+                  <li>1 free AI scan per week</li>
                   <li>Free scans reset every Monday</li>
+                  <li>Unknown/non-food scans are not counted</li>
                 </ul>
               </div>
               <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] p-5">
@@ -93,13 +94,13 @@ export default function TermsPage() {
                 </h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm">
                   <li>
-                    <strong className="text-white">Annual:</strong> $29.99/year
+                    <strong className="text-white">Annual:</strong> $49.99/year
                   </li>
                   <li>
-                    <strong className="text-white">Weekly:</strong> $4.99/week
+                    <strong className="text-white">Weekly:</strong> $6.99/week
                   </li>
                   <li>
-                    <strong className="text-white">Monthly:</strong> $6.99/month
+                    <strong className="text-white">Lifetime:</strong> $99.99 one-time
                   </li>
                 </ul>
               </div>
@@ -111,16 +112,21 @@ export default function TermsPage() {
                 purchase.
               </li>
               <li>
-                Subscriptions automatically renew unless auto-renew is turned
-                off at least 24 hours before the end of the current period.
+                Weekly and Annual subscriptions automatically renew unless
+                auto-renew is turned off at least 24 hours before the end of the
+                current period.
               </li>
               <li>
-                You can manage and cancel your subscription at any time in your
-                App Store account settings.
+                The Lifetime plan is a one-time purchase with no recurring
+                charges and provides permanent access to all Premium features.
+              </li>
+              <li>
+                You can manage and cancel subscriptions at any time in your App
+                Store account settings.
               </li>
               <li>
                 No refunds are provided for unused portions of a subscription
-                period.
+                period or for Lifetime purchases, except where required by law.
               </li>
             </ul>
           </section>
@@ -147,14 +153,23 @@ export default function TermsPage() {
           <section>
             <h2>5. Accuracy of Analysis</h2>
             <p>
-              The AI-generated analysis is based on the information visible in
+              The AI-generated analysis has an approximate accuracy of 95% and
+              may occasionally misidentify ingredients or miss flagged
+              substances. The analysis is based on the information visible in
               the scanned label image. We do not guarantee:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>100% accuracy of ingredient identification</li>
-              <li>Detection of all harmful substances</li>
+              <li>Detection of all harmful substances or allergens</li>
               <li>Up-to-date information on regulatory classifications</li>
             </ul>
+            <p className="mt-4">
+              <strong className="text-white">
+                Always verify critical allergens on the physical product label
+                before consumption, especially if you have severe allergies or
+                medical conditions.
+              </strong>
+            </p>
             <p className="mt-4">
               Ingredient safety standards vary by country and regulatory body.
               Results are based on general health guidelines and user-defined
