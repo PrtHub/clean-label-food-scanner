@@ -1,4 +1,13 @@
-import { ShieldCheck, Zap, Lock, Flame, type LucideIcon } from "lucide-react";
+import {
+  ShieldCheck,
+  ScanSearch,
+  GraduationCap,
+  Sparkles,
+  Target,
+  ShieldAlert,
+  Lock,
+  type LucideIcon,
+} from "lucide-react";
 
 export interface Feature {
   icon: LucideIcon;
@@ -11,56 +20,86 @@ export interface FAQItem {
   a: string;
 }
 
+// 6 core features — matches landing-page playbook grid structure
 export const FEATURES: Feature[] = [
   {
-    icon: Zap,
-    title: "Advanced AI Analysis",
+    icon: ScanSearch,
+    title: "AI Ingredient Detection",
     description:
-      "Built on state-of-the-art AI for medical-grade ingredient analysis with zero database lag.",
+      "260+ harmful compounds, seed oils, hidden MSG, and artificial dyes — flagged by name in 3 seconds.",
   },
   {
-    icon: ShieldCheck,
-    title: "15+ Specialty Diets",
+    icon: GraduationCap,
+    title: "Ingredient Education",
     description:
-      "Keto, Vegan, SEED OIL FREE, Paleo, and more. Personalized protection for every lifestyle.",
+      "Tap any flagged ingredient to learn why it's harmful and what it does to your body — in plain English.",
   },
   {
-    icon: Flame,
-    title: "Deception Unmasked",
+    icon: Sparkles,
+    title: "Healthier Alternatives",
     description:
-      "Identifies hidden sugars and toxins masked under scientific names like 'Maltodextrin'.",
+      "AI suggests real cleaner products for every toxic item you scan — so you know exactly what to buy instead.",
+  },
+  {
+    icon: Target,
+    title: "Personalized Scans",
+    description:
+      "Tailored to your diet — Vegan, Keto, Gluten-Free, Paleo, Whole30, and 10+ more profiles with custom filters.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Allergen Protection",
+    description:
+      "Flags top 9 allergens plus cross-contamination warnings for every scan — peace of mind for sensitive families.",
   },
   {
     icon: Lock,
-    title: "Encrypted SQLite History",
+    title: "100% Private",
     description:
-      "Every scan is stored securely on your device. Your grocery list stays private and offline.",
+      "No account required. No images stored. Everything runs on your device with encrypted local history.",
   },
 ];
 
+// 10 FAQs — matches landing-page playbook objection-handling list
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    q: "How does the scanner work without a barcode?",
-    a: "CleanLabel uses Advanced AI Analysis to read the actual text printed on the label. This means it works on local products, artisan foods, and items without databases.",
+    q: "Is CleanLabel really free?",
+    a: "Yes. You get 3 free AI scans every week with no credit card required. Upgrade to Pro for unlimited scans at $4.99/week or $29.99/year.",
   },
   {
-    q: "What types of ingredients does it detect?",
-    a: "It detects over 5,000 harmful additives including artificial dyes, carrageenan, seed oils, and hidden sugars. It also cross-references against your specific dietary profile.",
+    q: "What makes this different from Yuka or Fooducate?",
+    a: "Unlike database-based scanners that need a barcode, CleanLabel uses AI to read any ingredient label — even products not in any database. It also explains WHY each ingredient is harmful and suggests cleaner alternatives.",
   },
   {
-    q: "Can I set custom filters for allergies?",
-    a: "Yes! Beyond our 15+ standard diets, you can type in custom 'Strict Filters' to exclude specific ingredients like 'Peanuts' or 'Palm Oil'—no matter what they're called.",
+    q: "How accurate is the AI?",
+    a: "Roughly 95% accurate for ingredient identification. For severe allergies or medical conditions, we recommend verifying critical ingredients on the physical label as a backup.",
   },
   {
-    q: "Is my scanning history private?",
-    a: "Absolutely. Unlike most apps, we store your history locally on your device via encrypted SQLite storage. We don't track your shopping habits or sell your data.",
+    q: "Does it work on barcodes or just labels?",
+    a: "It scans the physical ingredient label on any product — no barcode needed. This means it works on local products, imported foods, bakery items, and anything in any language.",
   },
   {
-    q: "How much is CleanLabel Pro?",
-    a: "CleanLabel is free to download and includes 3 free scans per week. Pro unlocks unlimited high-precision scans for $4.99/week or $29.99/year.",
+    q: "Is my data private?",
+    a: "Yes. No account required. Scans happen on your device and images are never stored on our servers. Your scan history is encrypted locally.",
   },
   {
-    q: "Does it work outside the US?",
-    a: "Yes. Because it reads the printed text directly, CleanLabel works on international labels and doesn't rely on region-locked barcode databases.",
+    q: "What diets does it support?",
+    a: "Vegan, Vegetarian, Keto, Paleo, Gluten-Free, Dairy-Free, Whole30, Mediterranean, Low-Sugar, Halal, Kosher, Low-FODMAP, Carnivore, Seed-Oil-Free, plus custom ingredient filters.",
+  },
+  {
+    q: "Can I cancel anytime?",
+    a: "Yes. Manage and cancel your subscription directly from your App Store settings. No lock-in, no email required.",
+  },
+  {
+    q: "Does it work without internet?",
+    a: "Internet is required for the AI analysis when you scan. Your scan history is stored locally so you can review past scans offline.",
+  },
+  {
+    q: "What phones does it support?",
+    a: "iPhone running iOS 15.1 or later. Android support is in development — sign up on the App Store page to get notified.",
+  },
+  {
+    q: "What if I scan something that's not food?",
+    a: "Our AI detects non-food images and politely tells you to try again. These failed scans don't count against your free scan limit.",
   },
 ];

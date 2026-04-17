@@ -12,7 +12,7 @@ export function FinalCTA() {
 
       {/* Massive Central Aurora */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] bg-emerald-500/10 blur-[180px] rounded-full animate-aurora-1" />
-      <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-teal-500/5 blur-[140px] rounded-full animate-aurora-2 shadow-[0_0_100px_rgba(20,184,166,0.1)]" />
+      <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-emerald-500/5 blur-[140px] rounded-full animate-aurora-2 shadow-[0_0_100px_rgba(20,184,166,0.1)]" />
 
       <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
         <AnimateIn>
@@ -22,26 +22,24 @@ export function FinalCTA() {
         </AnimateIn>
 
         <AnimateIn delay={100}>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tighter leading-none">
-            Ready to{" "}
-            <span className="text-transparent bg-clip-text bg-[#10B981] bg-size-[200%_100%] animate-gradient-x">
-              Transform
-            </span>{" "}
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.95]">
+            Stop trusting the front.
             <br />
-            Your Health?
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-emerald-300 to-emerald-400 bg-size-[200%_100%] animate-gradient-x">
+              Start reading the back.
+            </span>
           </h2>
         </AnimateIn>
 
         <AnimateIn delay={200}>
-          <p className="text-gray-400 text-lg sm:text-2xl mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
-            Join thousands of health-conscious shoppers who have taken back
-            control of their nutrition. Scan your first label in seconds.
+          <p className="text-zinc-400 text-lg sm:text-xl mb-14 max-w-xl mx-auto leading-relaxed">
+            One scan. Full truth. 3 seconds flat. Download CleanLabel and stop being lied to by the food industry.
           </p>
         </AnimateIn>
 
-        <AnimateIn delay={300} className="flex flex-col items-center gap-8">
+        <AnimateIn delay={300} className="flex flex-col items-center gap-6">
           <a
-            href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+            href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=landing_final_cta&mt=8"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-4 bg-white text-black font-black px-10 py-5 rounded-[2rem] overflow-hidden active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]"
@@ -56,18 +54,10 @@ export function FinalCTA() {
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </a>
 
-          <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 px-5 py-2 rounded-full backdrop-blur-md">
+          <div className="flex items-center gap-2 text-sm text-zinc-500 font-medium">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-xs font-black tracking-widest uppercase">
-              Instant Pro Access
-            </span>
+            <span>Free · No credit card · No account required</span>
           </div>
-        </AnimateIn>
-
-        <AnimateIn delay={400} className="mt-12">
-          <p className="text-gray-500 text-sm font-semibold tracking-wide">
-            Compatible with all iOS and Android devices • Advanced AI Analysis
-          </p>
         </AnimateIn>
       </div>
     </section>

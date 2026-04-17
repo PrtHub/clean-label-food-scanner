@@ -48,14 +48,14 @@ export function Navbar() {
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-xs font-black uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300"
+              className="text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white transition-colors duration-300"
             >
               {item}
             </a>
           ))}
           <Link
             href="/blog"
-            className="text-xs font-black uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300"
+            className="text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-white transition-colors duration-300"
           >
             Blog
           </Link>
@@ -63,7 +63,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+          href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=landing_navbar&mt=8"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2.5 bg-white text-black text-xs font-black uppercase tracking-widest px-6 py-2.5 rounded-2xl hover:bg-emerald-400 Transition-all shadow-xl shadow-white/5 group active:scale-95"
@@ -75,7 +75,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+          className="md:hidden w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white transition-colors"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -83,13 +83,13 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="absolute top-[calc(100%+12px)] left-0 right-0 md:hidden bg-[#0F0F0F]/95 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 space-y-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+          <div className="absolute top-[calc(100%+12px)] left-0 right-0 md:hidden bg-[rgb(255 255 255 / 0.03)]/95 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 space-y-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300">
             {["Features", "Pricing", "FAQ"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
                 onClick={() => setOpen(false)}
-                className="block text-lg font-bold text-gray-300 hover:text-white transition-colors"
+                className="block text-lg font-bold text-zinc-300 hover:text-white transition-colors"
               >
                 {item}
               </a>
@@ -97,12 +97,12 @@ export function Navbar() {
             <Link
               href="/blog"
               onClick={() => setOpen(false)}
-              className="block text-lg font-bold text-gray-300 hover:text-white transition-colors"
+              className="block text-lg font-bold text-zinc-300 hover:text-white transition-colors"
             >
               Blog
             </Link>
             <a
-              href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+              href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=landing_mobile_menu&mt=8"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

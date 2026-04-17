@@ -24,7 +24,7 @@ export function Footer() {
                 Clean<span className="text-emerald-400">Label</span>
               </span>
             </a>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-[240px]">
+            <p className="text-zinc-500 text-sm leading-relaxed max-w-[240px]">
               AI-powered food transparency. Know exactly what you&apos;re
               eating.
             </p>
@@ -38,7 +38,7 @@ export function Footer() {
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                    className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors duration-200"
                   >
                     {item}
                   </a>
@@ -47,7 +47,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                  className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors duration-200"
                 >
                   Blog
                 </Link>
@@ -62,7 +62,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                  className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors duration-200"
                 >
                   Privacy Policy
                 </Link>
@@ -70,7 +70,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                  className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors duration-200"
                 >
                   Terms of Service
                 </Link>
@@ -86,7 +86,7 @@ export function Footer() {
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                    className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors duration-200"
                   >
                     {item}
                   </a>
@@ -95,7 +95,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/support"
-                  className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200"
+                  className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors duration-200"
                 >
                   Support
                 </Link>
@@ -105,7 +105,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/[0.04] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-sm">
+          <p className="text-zinc-600 text-sm">
             &copy; {new Date().getFullYear()} CleanLabel. All rights reserved.
           </p>
           <p className="text-gray-700 text-xs">

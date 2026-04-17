@@ -87,6 +87,14 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   category: "health",
+  appleWebApp: {
+    title: "CleanLabel",
+    statusBarStyle: "black-translucent",
+  },
+  other: {
+    // Smart App Banner for iOS Safari — shows a native "Get the app" banner
+    "apple-itunes-app": "app-id=6760940713",
+  },
 };
 
 export default function RootLayout({
@@ -114,6 +122,29 @@ export default function RootLayout({
           gtag('config', 'G-VECGDQ83N7');
         `}
       </Script>
+
+      {/* Meta Pixel — set NEXT_PUBLIC_META_PIXEL_ID in env to activate */}
+      {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
+        <>
+          <Script id="meta-pixel" strategy="afterInteractive">
+            {`
+              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${process.env.NEXT_PUBLIC_META_PIXEL_ID}');
+              fbq('track', 'PageView');
+            `}
+          </Script>
+          <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        </>
+      )}
     </html>
   );
 }

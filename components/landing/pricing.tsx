@@ -34,7 +34,7 @@ export function Pricing() {
               Longevity.
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto font-medium">
             Full laboratory-grade power for everyone. Pro users unlock unlimited
             exploration of every food aisle.
           </p>
@@ -43,11 +43,11 @@ export function Pricing() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 max-w-[90rem] mx-auto overflow-visible">
           {/* Free Tier */}
           <AnimateIn className="h-full">
-            <div className="group relative h-full rounded-[2rem] bg-[#0F0F0F] border border-white/5 p-6 sm:p-8 flex flex-col hover:border-white/10 transition-all duration-500 translate-y-4">
+            <div className="group relative h-full rounded-[2rem] bg-[rgb(255 255 255 / 0.03)] border border-white/5 p-6 sm:p-8 flex flex-col hover:border-white/10 transition-all duration-500 translate-y-4">
               <div className="mb-8">
                 <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
                   Essentials
-                  <span className="text-[8px] bg-white/5 px-2 py-0.5 rounded-full text-gray-400 uppercase tracking-widest border border-white/10">
+                  <span className="text-[8px] bg-white/5 px-2 py-0.5 rounded-full text-zinc-400 uppercase tracking-widest border border-white/10">
                     Free
                   </span>
                 </h3>
@@ -56,7 +56,7 @@ export function Pricing() {
                     1 Free Scan
                   </span>
                 </div>
-                <p className="text-gray-500 text-[10px] font-medium uppercase tracking-widest">
+                <p className="text-zinc-500 text-[10px] font-medium uppercase tracking-widest">
                   Every Week
                 </p>
               </div>
@@ -65,7 +65,7 @@ export function Pricing() {
                 {COMMON_FEATURES.map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <Check className="w-4 h-4 text-gray-700 shrink-0" />
-                    <span className="text-gray-500 text-xs font-medium">
+                    <span className="text-zinc-500 text-xs font-medium">
                       {item}
                     </span>
                   </div>
@@ -73,7 +73,7 @@ export function Pricing() {
               </div>
 
               <a
-                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=pricing_free&mt=8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center py-3.5 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-bold hover:bg-white/10 transition-all"
@@ -85,7 +85,7 @@ export function Pricing() {
 
           {/* Weekly Pro */}
           <AnimateIn delay={100} className="h-full">
-            <div className="group relative h-full rounded-[2rem] bg-[#0F0F0F] border border-white/5 p-6 sm:p-8 flex flex-col hover:border-white/10 transition-all duration-500">
+            <div className="group relative h-full rounded-[2rem] bg-[rgb(255 255 255 / 0.03)] border border-white/5 p-6 sm:p-8 flex flex-col hover:border-white/10 transition-all duration-500">
               <div className="mb-8 relative z-10">
                 <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
                   Weekly Pro
@@ -95,7 +95,7 @@ export function Pricing() {
                   <span className="text-4xl font-bold text-white tracking-tighter">
                     $6.99
                   </span>
-                  <span className="text-gray-500 text-xs font-medium">
+                  <span className="text-zinc-500 text-xs font-medium">
                     /week
                   </span>
                 </div>
@@ -108,7 +108,7 @@ export function Pricing() {
                 {COMMON_FEATURES.map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <Check className="w-4 h-4 text-emerald-500/50 shrink-0" />
-                    <span className="text-gray-300 text-xs font-bold">
+                    <span className="text-zinc-300 text-xs font-bold">
                       {item}
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export function Pricing() {
               </div>
 
               <a
-                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=pricing_weekly&mt=8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center py-3.5 rounded-xl bg-white/10 border border-white/10 text-white text-xs font-bold hover:bg-white/20 transition-all active:scale-[0.98]"
@@ -172,7 +172,7 @@ export function Pricing() {
               </div>
 
               <a
-                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=pricing_yearly&mt=8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative w-full text-center py-4 rounded-xl bg-emerald-500 text-[#0A0A0A] font-black text-xs uppercase tracking-widest overflow-hidden group/btn shadow-[0_0_40px_rgba(16,185,129,0.4)] hover:shadow-[0_0_60px_rgba(16,185,129,0.5)] transition-all active:scale-95"
@@ -185,18 +185,18 @@ export function Pricing() {
 
           {/* Lifetime Pro */}
           <AnimateIn delay={300} className="h-full">
-            <div className="group relative h-full rounded-[2rem] bg-[#0F0F0F] border border-white/5 p-6 sm:p-8 flex flex-col hover:border-white/10 transition-all duration-500">
+            <div className="group relative h-full rounded-[2rem] bg-[rgb(255 255 255 / 0.03)] border border-white/5 p-6 sm:p-8 flex flex-col hover:border-white/10 transition-all duration-500">
               <div className="mb-8 relative z-10">
                 <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
                   Lifetime Pro
-                  <Crown className="w-4 h-4 text-amber-400/50" />
+                  <Crown className="w-4 h-4 text-white/40" />
                 </h3>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-4xl font-bold text-white tracking-tighter">
                     $99.99
                   </span>
                 </div>
-                <p className="text-amber-400/80 text-[10px] font-black uppercase tracking-widest">
+                <p className="text-white/70 text-[10px] font-black uppercase tracking-widest">
                   Pay Once, Own Forever
                 </p>
               </div>
@@ -204,24 +204,24 @@ export function Pricing() {
               <div className="space-y-3 mb-8 flex-1 relative z-10">
                 {COMMON_FEATURES.map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <Check className="w-4 h-4 text-amber-500/50 shrink-0" />
-                    <span className="text-gray-200 text-xs font-bold">
+                    <Check className="w-4 h-4 text-white/50 shrink-0" />
+                    <span className="text-zinc-300 text-xs font-bold">
                       {item}
                     </span>
                   </div>
                 ))}
                 <div className="pt-3 border-t border-white/5 mt-3">
-                  <span className="text-gray-500 text-[10px] font-medium leading-relaxed block">
+                  <span className="text-zinc-500 text-[10px] font-medium leading-relaxed block">
                     No recurring fees. Ever. Includes all future AI model updates.
                   </span>
                 </div>
               </div>
 
               <a
-                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713"
+                href="https://apps.apple.com/us/app/cleanlabel-ai-food-scanner/id6760940713?pt=126900305&ct=pricing_lifetime&mt=8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center py-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold hover:bg-amber-500/20 transition-all active:scale-[0.98]"
+                className="w-full text-center py-3.5 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-bold hover:bg-white/10 transition-all active:scale-[0.98]"
               >
                 Get Lifetime
               </a>
@@ -230,7 +230,7 @@ export function Pricing() {
         </div>
 
         <AnimateIn delay={400} className="text-center mt-20">
-          <p className="text-gray-500 text-[10px] font-black tracking-widest uppercase opacity-40">
+          <p className="text-zinc-500 text-[10px] font-black tracking-widest uppercase opacity-40">
             Secure payments via Apple App Store • Cancel recurring plans anytime
           </p>
         </AnimateIn>
