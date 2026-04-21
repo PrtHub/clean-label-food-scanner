@@ -27,7 +27,7 @@ const FAQ = [
   {
     icon: Camera,
     q: "The scanner isn't recognizing my label",
-    a: "Make sure the label is well-lit and fully visible in the camera frame. Avoid glare and hold your phone steady. The scanner works best on flat, printed ingredient lists — handwritten or heavily stylized text may not scan properly.",
+    a: "Make sure the  label is well-lit and fully visible in the camera frame. Avoid glare and hold your phone steady. The scanner works best on flat, printed ingredient lists — handwritten or heavily stylized text may not scan properly.",
   },
   {
     icon: RefreshCw,
